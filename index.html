@@ -36,7 +36,7 @@ section{padding:5rem 0}section+section{border-top:1px solid var(--border)}
 .section-title{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--ink);margin-bottom:.5rem}
 .section-sub{font-size:.95rem;color:var(--muted);margin-bottom:3rem;max-width:540px}
 .pblock{background:var(--surface);border:1px solid var(--border);border-radius:16px;margin-bottom:2rem;overflow:hidden}
-.pbar{height:3px}.pbar-accent{background:var(--accent)}.pbar-navy{background:var(--navy)}.pbar-teal{background:var(--teal)}.pbar-amber{background:var(--amber)}
+.pbar{height:3px}.pbar-accent{background:var(--accent)}.pbar-navy{background:var(--navy)}.pbar-teal{background:var(--teal)}.pbar-amber{background:var(--amber)}.pbar-purple{background:#534AB7}
 .phead{padding:1.8rem 2rem 1.2rem}
 .pdom{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
 .pblock h3{font-size:1.12rem;font-weight:600;color:var(--ink);margin-bottom:.6rem}
@@ -49,13 +49,14 @@ section{padding:5rem 0}section+section{border-top:1px solid var(--border)}
 .pbody-l{padding:1.5rem 2rem 2rem;border-right:1px solid var(--border)}
 .pbody-r{padding:1.5rem 2rem 2rem}
 .pbody-full{padding:1.5rem 2rem 2rem;display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;border-top:1px solid var(--border)}
+.pbody-single{padding:1.5rem 2rem 2rem;border-top:1px solid var(--border)}
 .ctitle{font-family:'DM Mono',monospace;font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:1rem}
 .cwrap{position:relative;height:210px}
 .plink{font-size:.8rem;font-weight:500;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:.3rem;padding:.4rem .8rem;border:1px solid var(--border);border-radius:6px;transition:all .2s;margin-top:1rem}
 .plink:hover{border-color:var(--navy);background:var(--tag-bg)}
 .exp-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;margin-bottom:1.2rem}
 .elogo{width:48px;height:48px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'DM Serif Display',serif;font-size:1.1rem;flex-shrink:0}
-.elogo.teal{background:var(--teal)}
+.elogo.teal{background:var(--teal)}.elogo.amber{background:var(--amber)}
 .ehead{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.4rem;flex-wrap:wrap;gap:.5rem}
 .etitle{font-size:1rem;font-weight:600;color:var(--ink)}
 .eco{font-size:.85rem;color:var(--muted);margin-bottom:.8rem}
@@ -84,6 +85,10 @@ section{padding:5rem 0}section+section{border-top:1px solid var(--border)}
 .klink:hover{background:rgba(255,255,255,.15)}
 footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:.8rem;color:var(--soft);font-family:'DM Mono',monospace}
 .edgrid{display:grid;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.5rem;margin-top:.8rem}
+.bullet-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.4rem}
+.bullet-item{font-size:.82rem;color:var(--muted);padding:.5rem .8rem .5rem 1.4rem;position:relative;line-height:1.7;background:var(--bg);border-radius:6px}
+.bullet-item::before{content:'→';position:absolute;left:.5rem;color:var(--navy);font-size:.75rem;top:.52rem}
+.bullet-item strong{color:var(--ink);font-weight:600}
 @media(max-width:768px){
   .hero{grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem}
   .hero-stats{flex-direction:row;justify-content:center}
@@ -129,47 +134,23 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
   <h2 class="section-title">Projects</h2>
   <p class="section-sub">Self-initiated case studies across fintech, consumer apps, food delivery and transport — each starting from a real business question.</p>
 
-  <!-- CRED -->
-  <div class="pblock">
-    <div class="pbar pbar-accent"></div>
-    <div class="phead">
-      <div class="pdom">Consumer App · NLP · Power BI</div>
-      <h3>CRED App — User Pain Point Analysis &amp; Product Brief</h3>
-      <p>Collected and cleaned 150K+ Play Store reviews. Designed a weighted Pain Index (60% upvote + 40% volume) to rank complaint themes by actual user impact rather than raw count. Identified rewards devaluation as the #1 issue — scoring 2.9× higher than the next theme — and packaged findings into a product brief with Power BI dashboards.</p>
-      <div class="pmeta">
-        <span class="mpill">134,552 valid reviews</span><span class="mpill">Pain Index 2.9× gap</span><span class="mpill">22,619 upvotes on #1 issue</span>
-      </div>
-      <div class="ptags"><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">Power BI</span><span class="ptag">NLP</span><span class="ptag">Product Brief</span></div>
-    </div>
-    <div class="pbody">
-      <div class="pbody-l">
-        <div class="ctitle">Pain Index by complaint theme (verified from Power BI output)</div>
-        <div class="cwrap"><canvas id="credPain"></canvas></div>
-      </div>
-      <div class="pbody-r">
-        <div class="ctitle">Average rating by theme — lower = more severe dissatisfaction</div>
-        <div class="cwrap"><canvas id="credRating"></canvas></div>
-        <a class="plink" href="https://github.com/Arjun76692/CRED-Product-Analytics-150K-Reviews" target="_blank">↗ View on GitHub</a>
-      </div>
-    </div>
-  </div>
-
   <!-- MUTUAL FUND -->
   <div class="pblock">
     <div class="pbar pbar-navy"></div>
     <div class="phead">
-      <div class="pdom">Fintech · Competitive Analysis · PRD</div>
+      <div class="pdom">Fintech · Primary Research · Competitive Analysis · PRD</div>
       <h3>Mutual Fund Risk-Aware Discovery — Competitive Analysis &amp; PRD</h3>
-      <p>Ran a 21-person investor survey revealing 76% choose funds without tracking risk metrics. Confirmed via 12-dimension competitive analysis that neither Zerodha Coin nor Angel One surfaces Sharpe ratio, volatility or max drawdown. Defined 3 investor personas and wrote a full PRD with MoSCoW requirements, risk register and 3-phase roadmap.</p>
+      <p>Started by asking 21 people how they pick mutual funds. 76% had never tracked a risk metric. Then confirmed via 12-point screenshot comparison of Zerodha Coin and Angel One that neither platform surfaces Sharpe ratio, volatility, or max drawdown — despite all metrics being computable from available data. Fetched live NAV data for 14,221 funds via API, computed risk metrics from scratch, and wrote a full PRD for the missing feature.</p>
       <div class="pmeta">
-        <span class="mpill">14,221 funds sourced</span><span class="mpill">342 large-cap analysed</span><span class="mpill">20 downside-protected</span><span class="mpill">ANOVA p=0.003</span>
+        <span class="mpill">14,221 funds sourced</span><span class="mpill">342 large-cap analysed</span><span class="mpill">20 downside-protected</span><span class="mpill">76% survey gap confirmed</span>
       </div>
-      <div class="ptags"><span class="ptag">Python</span><span class="ptag">SQL</span><span class="ptag">PRD</span><span class="ptag">Competitive Analysis</span><span class="ptag">ANOVA</span></div>
+      <div class="ptags"><span class="ptag">Python</span><span class="ptag">MySQL</span><span class="ptag">mftool API</span><span class="ptag">SQLAlchemy</span><span class="ptag">PRD</span><span class="ptag">Competitive Analysis</span></div>
     </div>
     <div class="pbody">
       <div class="pbody-l">
         <div class="ctitle">Fund universe funnel — 14,221 → 20 downside-protected</div>
         <div class="cwrap"><canvas id="mfFunnel"></canvas></div>
+        <a class="plink" href="https://github.com/Arjun76692/Mutual-Fund-Risk-Adjusted-Performance-Analyzer-" target="_blank">↗ View on GitHub</a>
       </div>
       <div class="pbody-r">
         <div class="ctitle">12-dimension platform gap — Zerodha Coin vs Angel One</div>
@@ -184,31 +165,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
           </table>
           <div style="font-size:.7rem;color:var(--muted);margin-top:.6rem;font-family:'DM Mono',monospace;">Neither platform surfaces Sharpe ratio, volatility or max drawdown</div>
         </div>
-        <a class="plink" href="https://github.com/Arjun76692/Mutual-Fund-Risk-Adjusted-Performance-Analyzer-" target="_blank">↗ View on GitHub</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- FLIXBUS -->
-  <div class="pblock">
-    <div class="pbar pbar-teal"></div>
-    <div class="phead">
-      <div class="pdom">Transport Pricing · Python · Industry Dataset</div>
-      <h3>Pricing Analytics Case Study — FlixBus <span class="inote">Industry-sponsored academic project</span></h3>
-      <p>Analysed a real FlixBus India pricing dataset provided via a campus engagement. Engineered competitor-matching logic across bus type, rating similarity and a 90-minute departure window. Built a 5-bucket pricing action framework across 26,170 routes, flagging 15,163 underpriced and 3,991 overpriced combinations with Medium / High severity tiers.</p>
-      <div class="pmeta">
-        <span class="mpill">26,170 routes</span><span class="mpill">73.2% flag rate</span><span class="mpill">15,163 underpriced</span><span class="mpill">3,991 overpriced</span>
-      </div>
-      <div class="ptags"><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">SQL</span><span class="ptag">Excel</span><span class="ptag">Pricing Analysis</span></div>
-    </div>
-    <div class="pbody">
-      <div class="pbody-l">
-        <div class="ctitle">Pricing flag distribution — 26,170 routes</div>
-        <div class="cwrap"><canvas id="flixFlag"></canvas></div>
-      </div>
-      <div class="pbody-r">
-        <div class="ctitle">Recommended action by route count</div>
-        <div class="cwrap"><canvas id="flixAction"></canvas></div>
+        <a class="plink" href="https://medium.com/@arjunreddy.inc/i-asked-21-people-how-they-pick-mutual-funds-their-answers-shocked-me-5bd6295fd675" target="_blank">↗ Medium write-up</a>
       </div>
     </div>
   </div>
@@ -217,13 +174,13 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
   <div class="pblock">
     <div class="pbar pbar-amber"></div>
     <div class="phead">
-      <div class="pdom">Food Delivery · DeBERTa NLP · BRD</div>
+      <div class="pdom">Food Delivery · DeBERTa NLP · MySQL · BRD</div>
       <h3>Zomato — Complaint &amp; Refund Resolution Case Study</h3>
-      <p>Classified 3,462 complaint reviews into 10 themes using a DeBERTa zero-shot classifier (33M params) with a calibrated 0.75 confidence threshold and top-K=2. Diagnosed multi-theme complaint spikes on Mar 8–9 and Mar 17–18 as system-wide failures. Converted findings into a BRD with 9 functional requirements mapped to owner teams.</p>
+      <p>Scraped 30K Zomato reviews and classified 3,462 complaint reviews into 10 themes using DeBERTa NLP (zero-shot, multi-label, threshold 0.70, TOP_K=2). Found via co-occurrence analysis that support failure and refund delays almost always appear in the same review — they share a root cause, not just a surface pattern. Multi-category spikes on Mar 8–9 and Mar 17–18 confirmed systemic operational failures. Translated everything into a BRD with 9 Must Have requirements and 5 stakeholder-mapped user stories.</p>
       <div class="pmeta">
-        <span class="mpill">3,462 reviews classified</span><span class="mpill">10 complaint themes</span><span class="mpill">9 functional requirements</span><span class="mpill">DeBERTa 33M params</span>
+        <span class="mpill">3,462 reviews classified</span><span class="mpill">10 complaint themes</span><span class="mpill">4 process stages</span><span class="mpill">9 functional requirements</span>
       </div>
-      <div class="ptags"><span class="ptag">Python</span><span class="ptag">DeBERTa</span><span class="ptag">NLP</span><span class="ptag">SQL</span><span class="ptag">BRD</span><span class="ptag">Power BI</span></div>
+      <div class="ptags"><span class="ptag">Python</span><span class="ptag">DeBERTa NLP</span><span class="ptag">MySQL</span><span class="ptag">SQLAlchemy</span><span class="ptag">BRD</span></div>
     </div>
     <div class="pbody-full">
       <div>
@@ -236,19 +193,60 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
         <div style="display:flex;flex-direction:column;gap:.7rem;margin-top:.2rem;">
           <div style="background:var(--bg);border-radius:8px;padding:.9rem 1rem;">
             <div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);margin-bottom:.25rem;">MODEL SELECTION</div>
-            <div style="font-size:.84rem;color:var(--ink);font-weight:500;">DeBERTa (33M params) via Ollama</div>
-            <div style="font-size:.77rem;color:var(--muted);margin-top:.15rem;">Chosen over BERT for memory efficiency on local device. Validated on self-written test phrase before full-run: 90–96% confidence, correct classification.</div>
+            <div style="font-size:.84rem;color:var(--ink);font-weight:500;">DeBERTa (zero-shot) via Hugging Face</div>
+            <div style="font-size:.77rem;color:var(--muted);margin-top:.15rem;">Chosen for zero-shot capability — no labelled training data needed. Validated on test phrases before full run: 90–96% confidence, correct classification.</div>
           </div>
           <div style="background:var(--bg);border-radius:8px;padding:.9rem 1rem;">
             <div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);margin-bottom:.25rem;">THRESHOLD CALIBRATION</div>
-            <div style="font-size:.84rem;color:var(--ink);font-weight:500;">0.90 → 0.80 → 0.70 → <span style="color:var(--teal)">0.75 ✓</span></div>
-            <div style="font-size:.77rem;color:var(--muted);margin-top:.15rem;">0.90 forced single-category only. Iterated to find balance between precision and dual-category coverage. 0.75 was the middle ground.</div>
+            <div style="font-size:.84rem;color:var(--ink);font-weight:500;">0.90 → 0.80 → 0.75 → <span style="color:var(--teal)">0.70 ✓</span></div>
+            <div style="font-size:.77rem;color:var(--muted);margin-top:.15rem;">0.90 forced single-category only. Iterated to find balance between precision and dual-category coverage. 0.70 gave the best signal-to-noise on complaint reviews.</div>
           </div>
           <div style="background:var(--bg);border-radius:8px;padding:.9rem 1rem;">
             <div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);margin-bottom:.25rem;">TOP-K CONSTRAINT</div>
             <div style="font-size:.84rem;color:var(--ink);font-weight:500;">Top-K = 2 per review</div>
-            <div style="font-size:.77rem;color:var(--muted);margin-top:.15rem;">Each review assigned to at most 2 categories above threshold. Prevents over-labelling while capturing multi-theme complaints.</div>
+            <div style="font-size:.77rem;color:var(--muted);margin-top:.15rem;">Each review assigned to at most 2 categories above threshold. Prevents over-labelling while capturing genuine multi-theme complaints like support + refund.</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOSHTALKS -->
+  <div class="pblock">
+    <div class="pbar pbar-purple"></div>
+    <div class="phead">
+      <div class="pdom">Product Design · Data Quality · Voice AI Evaluation</div>
+      <h3>JoshTalks — Product Design, Data Quality &amp; AI Evaluation</h3>
+      <p>Three connected deliverables for JoshTalks: a full PRD for a mobile image collection platform, a behavioural quality system for 51,783 transcription tasks, and a Voice AI evaluation framework. All aimed at the same problem — making training data reliable at scale.</p>
+      <div class="pmeta">
+        <span class="mpill">51,783 tasks analysed</span><span class="mpill">7-step contributor workflow</span><span class="mpill">3-tier escalation system</span><span class="mpill">4 AI eval criteria</span>
+      </div>
+      <div class="ptags"><span class="ptag">PRD</span><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">Data Quality</span><span class="ptag">Process Design</span><span class="ptag">AI Evaluation</span></div>
+    </div>
+    <div class="pbody">
+      <div class="pbody-l">
+        <div class="ctitle">PRD — image collection platform</div>
+        <div class="bullet-list">
+          <div class="bullet-item"><strong>7-step contributor workflow</strong> — login, GPS detection, photo capture with blur check, 200-char description minimum, review screen, offline draft saving, success with district progress</div>
+          <div class="bullet-item"><strong>Admin dashboard</strong> — district coverage heatmap (red &lt;100 / yellow &lt;600 / green ≥1000), image gallery with approve/flag/reject, rejection reason dropdown</div>
+          <div class="bullet-item"><strong>MoSCoW requirements</strong> — 8 Must Have features with documented trade-offs, 2 Should Have features</div>
+          <div class="bullet-item"><strong>6 success metrics</strong> tracked: images/day, district coverage %, approval rate, avg description length, draft upload rate, contributor retention</div>
+        </div>
+        <a class="plink" href="https://github.com/Arjun76692/JoshTalks_Product_Design-Data_Quality_Analysis_AI-Evaluation_System-" target="_blank">↗ View on GitHub</a>
+      </div>
+      <div class="pbody-r">
+        <div class="ctitle">Data quality — transcription contributor flagging</div>
+        <div class="bullet-list" style="margin-bottom:1.2rem;">
+          <div class="bullet-item"><strong>Signal 1:</strong> Speed ratio &lt;1.0 on clips &gt;5s — submitted before audio finished. 5,957 tasks flagged (11.5%)</div>
+          <div class="bullet-item"><strong>Signal 2:</strong> No-edit submissions — passed Whisper output unchanged without reviewing. 8,591 tasks (16.6%)</div>
+          <div class="bullet-item"><strong>Signal 3:</strong> Repeated placeholder text — 10 users submitted same text up to 64 times across different clips</div>
+          <div class="bullet-item"><strong>3-tier response:</strong> task rejection → flag for human review → account suspension. No auto-block until 10+ tasks to avoid wrongly penalising genuine contributors</div>
+        </div>
+        <div class="ctitle">Voice AI evaluation framework</div>
+        <div class="bullet-list">
+          <div class="bullet-item"><strong>4 scored criteria:</strong> task completion (primary), comprehension accuracy, naturalness, error recovery</div>
+          <div class="bullet-item"><strong>AI-assisted triage:</strong> limits full human review to 250–350 of every 1,000 conversations</div>
+          <div class="bullet-item"><strong>Consistency check:</strong> auto-flag when evaluator score deviates &gt;2 points from team average</div>
         </div>
       </div>
     </div>
@@ -262,9 +260,9 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
       <h3>AI Resume Screening + Large-Scale ETL Pipeline</h3>
       <p>Built an end-to-end n8n pipeline using Groq LLM for JD-to-resume scoring — triggered on Google Drive upload, extracts PDF text, merges with JD, scores via AI agent, writes to Google Sheets. Separately built a 3-stage Python ETL pipeline for a 12.7M-row retail dataset with SQL joins across 3 sources and structured error logging.</p>
       <div class="pmeta">
-        <span class="mpill">3–4 hrs → &lt;2 min</span><span class="mpill">12.7M rows processed</span><span class="mpill">3 data sources joined</span>
+        <span class="mpill">3–4 hrs → &lt;2 min</span><span class="mpill">12.7M rows processed</span><span class="mpill">3 data sources joined</span><span class="mpill">$14.1M sales analysed</span>
       </div>
-      <div class="ptags"><span class="ptag">n8n</span><span class="ptag">Groq LLM</span><span class="ptag">Google Drive API</span><span class="ptag">Python ETL</span><span class="ptag">SQL CTEs</span></div>
+      <div class="ptags"><span class="ptag">n8n</span><span class="ptag">Groq LLM</span><span class="ptag">Google Drive API</span><span class="ptag">Python ETL</span><span class="ptag">SQL CTEs</span><span class="ptag">Power BI</span></div>
     </div>
     <div class="pbody">
       <div class="pbody-l">
@@ -306,7 +304,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
             <div style="width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:.1rem;">1</div>
             <div style="background:var(--bg);border-radius:8px;padding:.8rem 1rem;flex:1;">
               <div style="font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:.2rem;">Ingest</div>
-              <div style="font-size:.77rem;color:var(--muted);">Chunked reads for memory safety. Schema validation on load. Handles multiple source formats.</div>
+              <div style="font-size:.77rem;color:var(--muted);">Chunked reads for memory safety. Schema validation on load. Handles multiple source formats. 5-minute timeout per step with hard stop on failure.</div>
             </div>
           </div>
           <div style="display:flex;gap:.8rem;align-items:flex-start;">
@@ -319,12 +317,62 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
           <div style="display:flex;gap:.8rem;align-items:flex-start;">
             <div style="width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:.1rem;">3</div>
             <div style="background:var(--bg);border-radius:8px;padding:.8rem 1rem;flex:1;">
-              <div style="font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:.2rem;">Load</div>
-              <div style="font-size:.77rem;color:var(--muted);">SQL CTEs joining 3 sources (purchases, sales, supplier invoices) into query-ready fact table. Structured error logging catches failed loads.</div>
+              <div style="font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:.2rem;">Load &amp; Report</div>
+              <div style="font-size:.77rem;color:var(--muted);">CTEs joining 3 sources into MySQL fact table. Dual logging to file + stdout. Findings visualised in Power BI — 8 of 12 months declining, 3 loss-making SKUs, 13.5% pricing gap.</div>
             </div>
           </div>
         </div>
         <a class="plink" href="https://github.com/Arjun76692/EDA-ETL-Pipeline" target="_blank">↗ ETL Pipeline on GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLIXBUS -->
+  <div class="pblock">
+    <div class="pbar pbar-teal"></div>
+    <div class="phead">
+      <div class="pdom">Transport Pricing · Real Dataset · Team of 3</div>
+      <h3>Pricing Analytics — FlixBus India <span class="inote">Selected via open application · Jan–Mar 2026</span></h3>
+      <p>Worked on a real FlixBus India pricing dataset alongside a 3-member team selected through an open application. Built competitor-matching logic from scratch — no predefined criteria — and translated pricing gaps into a 5-bucket action framework across 26,170 routes.</p>
+      <div class="pmeta">
+        <span class="mpill">26,170 routes</span><span class="mpill">15,163 underpriced</span><span class="mpill">3,991 overpriced</span><span class="mpill">73.2% flag rate</span>
+      </div>
+      <div class="ptags"><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">SQL</span><span class="ptag">Excel</span><span class="ptag">Pricing Analysis</span></div>
+    </div>
+    <div class="pbody">
+      <div class="pbody-l">
+        <div class="ctitle">Pricing flag distribution — 26,170 routes</div>
+        <div class="cwrap"><canvas id="flixFlag"></canvas></div>
+      </div>
+      <div class="pbody-r">
+        <div class="ctitle">Recommended action by route count</div>
+        <div class="cwrap"><canvas id="flixAction"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRED -->
+  <div class="pblock">
+    <div class="pbar pbar-accent"></div>
+    <div class="phead">
+      <div class="pdom">Consumer App · Python · Power BI</div>
+      <h3>CRED App — User Pain Point Analysis &amp; Product Brief</h3>
+      <p>Noticed CRED had a 4.2 rating but my own coins felt increasingly worthless. Scraped 150K+ reviews to check if other users felt the same, built a weighted Pain Index, and found rewards-related feedback averaged 2.48 stars vs the app's 4.20 overall.</p>
+      <div class="pmeta">
+        <span class="mpill">134,552 valid reviews</span><span class="mpill">Pain score 1.00 on #1 issue</span><span class="mpill">22,619 upvotes</span><span class="mpill">Platform-wide — not version-specific</span>
+      </div>
+      <div class="ptags"><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">Power BI</span><span class="ptag">Product Brief</span></div>
+    </div>
+    <div class="pbody">
+      <div class="pbody-l">
+        <div class="ctitle">Pain Index by complaint theme (Power BI verified)</div>
+        <div class="cwrap"><canvas id="credPain"></canvas></div>
+      </div>
+      <div class="pbody-r">
+        <div class="ctitle">Average rating by theme — lower = more severe dissatisfaction</div>
+        <div class="cwrap"><canvas id="credRating"></canvas></div>
+        <a class="plink" href="https://github.com/Arjun76692/CRED-Product-Analytics-150K-Reviews" target="_blank">↗ View on GitHub</a>
+        <a class="plink" href="https://medium.com/@arjunreddy.inc/i-analysed-1-50-000-cred-reviews-because-i-got-curious-about-my-own-coins-which-i-got-as-rewards-8ab54d11e6ac" target="_blank" style="margin-left:.5rem;">↗ Medium write-up</a>
       </div>
     </div>
   </div>
@@ -335,32 +383,36 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
 <section id="experience"><div class="container">
   <div class="section-label">Work</div>
   <h2 class="section-title">Experience</h2>
-  <p class="section-sub">Real-world engagement plus academic teaching — both involving external stakeholders.</p>
+  <p class="section-sub">Freelance analytical work with real clients, real datasets, and real stakeholders.</p>
+
   <div class="exp-card">
     <div class="elogo teal">Fx</div>
     <div>
       <div class="ehead">
-        <div><div class="etitle">Pricing Analytics Case Study — FlixBus <span class="inote">Industry-sponsored academic project</span></div><div class="eco">FlixBus India Dataset · Facilitated via RBVRR Institute of Technology</div></div>
-        <div class="edate">Feb – Mar 2026</div>
+        <div><div class="etitle">Freelance Pricing Analyst — FlixBus India</div><div class="eco">Selected via open application · Pricing analysis project · Team of 3</div></div>
+        <div class="edate">Jan – Mar 2026</div>
       </div>
       <ul class="ebullets">
-        <li>Analysed a real FlixBus India pricing dataset; engineered competitor-matching logic across bus type, rating similarity and a <strong>90-minute departure window</strong> across <strong>26,170 routes</strong> — flagging <strong>15,163 underpriced</strong> and <strong>3,991 overpriced</strong> combinations into a 5-bucket action framework with Medium / High severity tiers.</li>
-        <li>Designed an automation plan for data ingestion, refresh strategy and orchestration (n8n / Airflow / GitHub Actions), documented as a structured process spec for a pricing or product team.</li>
+        <li>Collaborated with a 3-member team to build competitor-matching logic across <strong>26,170 routes</strong> — defining criteria on bus type, AC/sleeper/seater classification, bus score (±0.5 buffer), and a <strong>90-minute departure window</strong>.</li>
+        <li>Jointly designed a weighted average pricing model and load factor metric (seats filled / total seats) — surfacing <strong>15,163 underpriced</strong> and <strong>3,991 overpriced</strong> combinations into a 5-bucket action framework with Medium/High severity tiers for the FlixBus pricing team.</li>
       </ul>
     </div>
   </div>
+
   <div class="exp-card">
-    <div class="elogo">TA</div>
+    <div class="elogo amber">JG</div>
     <div>
       <div class="ehead">
-        <div><div class="etitle">Teaching Assistant — SQL &amp; Database Management Systems</div><div class="eco">RBVRR Institute of Technology, Osmania University — Hyderabad</div></div>
-        <div class="edate">2024 – 2025</div>
+        <div><div class="etitle">Freelance Data Analyst — Johnson Grammar School</div><div class="eco">Operations analytics · Team of 5 · Reporting to school leadership</div></div>
+        <div class="edate">Sep – Nov 2025</div>
       </div>
       <ul class="ebullets">
-        <li>Supported <strong>60+ MCA students</strong> on SQL debugging and schema design; identified recurring error patterns and created targeted walkthroughs, reducing repeat questions on the same concepts across the semester.</li>
+        <li>Worked within a 5-member team to analyse student transport data across <strong>27 bus routes</strong> — built a weighted route efficiency score combining bus utilisation (40%), detour ratio (30%), and students-per-stop density (30%) using Python and Pandas.</li>
+        <li>Identified consolidation opportunities that reduced <strong>27 routes to 24</strong> by merging low-utilisation routes within shared geographic zones — flagged high-detour routes (ratio &gt;1.4) and low-density stops (&lt;4 students) for removal, presenting findings directly to school leadership.</li>
       </ul>
     </div>
   </div>
+
 </div></section>
 
 <!-- SKILLS -->
@@ -369,10 +421,10 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
   <h2 class="section-title">Skills</h2>
   <p class="section-sub">Technical and product skills built through projects, not just coursework.</p>
   <div class="sgrid">
-    <div class="sgrp"><div class="sgtitle">Product</div><div class="spills"><span class="spill">PRD / BRD writing</span><span class="spill">MoSCoW prioritisation</span><span class="spill">User stories</span><span class="spill">Acceptance criteria</span><span class="spill">Competitive analysis</span><span class="spill">Roadmap definition</span><span class="spill">Success metrics</span><span class="spill">Persona mapping</span></div></div>
-    <div class="sgrp"><div class="sgtitle">Analytics</div><div class="spills"><span class="spill">Exploratory data analysis</span><span class="spill">KPI design &amp; tracking</span><span class="spill">Statistical testing (ANOVA)</span><span class="spill">NLP classification</span><span class="spill">Complaint analysis</span><span class="spill">Cohort analysis</span><span class="spill">Survey design</span><span class="spill">Load factor modelling</span></div></div>
-    <div class="sgrp"><div class="sgtitle">Programming &amp; Data</div><div class="spills"><span class="spill">Python (Pandas, NumPy)</span><span class="spill">SQL (MySQL, CTEs, joins)</span><span class="spill">ETL pipeline design</span><span class="spill">DeBERTa zero-shot NLP</span><span class="spill">n8n automation</span><span class="spill">Groq LLM</span><span class="spill">Git</span><span class="spill">Jupyter Notebook</span></div></div>
-    <div class="sgrp"><div class="sgtitle">BI &amp; Reporting</div><div class="spills"><span class="spill">Power BI (DAX, dashboards)</span><span class="spill">Excel (Pivot, VLOOKUP)</span><span class="spill">Google Sheets</span><span class="spill">Power Query</span><span class="spill">Jira (sprint boards)</span></div></div>
+    <div class="sgrp"><div class="sgtitle">Product</div><div class="spills"><span class="spill">PRD / BRD writing</span><span class="spill">MoSCoW prioritisation</span><span class="spill">User stories</span><span class="spill">Acceptance criteria</span><span class="spill">Competitive analysis</span><span class="spill">Roadmap definition</span><span class="spill">Success metrics</span><span class="spill">Persona mapping</span><span class="spill">Edge case identification</span></div></div>
+    <div class="sgrp"><div class="sgtitle">Analytics</div><div class="spills"><span class="spill">Exploratory data analysis</span><span class="spill">KPI design &amp; tracking</span><span class="spill">NLP classification</span><span class="spill">Complaint analysis</span><span class="spill">Cohort analysis</span><span class="spill">Survey design</span><span class="spill">Load factor modelling</span><span class="spill">Version concentration analysis</span></div></div>
+    <div class="sgrp"><div class="sgtitle">Programming &amp; Data</div><div class="spills"><span class="spill">Python (Pandas, NumPy)</span><span class="spill">SQL (MySQL, CTEs, joins)</span><span class="spill">ETL pipeline design</span><span class="spill">DeBERTa zero-shot NLP</span><span class="spill">n8n automation</span><span class="spill">Groq LLM</span><span class="spill">mftool API</span><span class="spill">SQLAlchemy</span><span class="spill">Git</span></div></div>
+    <div class="sgrp"><div class="sgtitle">BI &amp; Reporting</div><div class="spills"><span class="spill">Power BI (DAX, dashboards)</span><span class="spill">Excel (Pivot, VLOOKUP)</span><span class="spill">Google Sheets</span><span class="spill">Figma</span><span class="spill">Jira</span></div></div>
   </div>
   <div style="margin-top:3rem;"><div class="section-label">Certifications &amp; Achievements</div>
   <div class="crow">
@@ -390,7 +442,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
       <div class="section-label">About</div>
       <h2 class="section-title">Background</h2>
       <p>MCA graduate (CGPA 8.5/10) from RBVRR Institute of Technology, Osmania University, Hyderabad. I build analysis around a business question — not a dataset. Every project starts with validating a real gap, then building the data case for it.</p>
-      <p>I completed an industry-sponsored pricing analysis engagement using real FlixBus data, and have built self-initiated case studies across fintech, consumer apps, food delivery and workflow automation.</p>
+      <p>I've done freelance analytical work on a real FlixBus India pricing dataset (team of 3, selected via open application) and transport routing data for Johnson Grammar School (team of 5, reporting to school leadership). Both involved real stakeholders and actual deliverables.</p>
       <p>Currently targeting Data Analyst, Business Analyst and Product Analyst roles in Hyderabad or Bangalore. Open to relocation across metro cities.</p>
       <div style="margin-top:1.5rem;"><div class="section-label">Education</div>
       <div class="edgrid">
@@ -420,19 +472,7 @@ Chart.defaults.font={family:"'Outfit',sans-serif",size:11};
 Chart.defaults.color='#64748b';
 function base(e){return{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{}}},scales:{y:{grid:{color:'#f0ede8'}},x:{grid:{display:false}}},...e}}
 
-// CRED Pain Index — real numbers from Power BI dashboard
-new Chart(document.getElementById('credPain'),{type:'bar',data:{
-  labels:['Rewards\ndevaluation','Customer\nsupport','Payment\nissues','App\nperformance','Trust &\nprivacy','Feature\nrequest','UI/UX','Loan\nissues'],
-  datasets:[{data:[1.00,0.56,0.48,0.19,0.06,0.03,0.02,0.00],backgroundColor:[accent,'#e8693a','#e87d55','#e89170','#eab08e','#ecc4ae','#eed8cc','#f0ede8'],borderRadius:4}]
-},options:base({scales:{y:{beginAtZero:true,max:1.15,grid:{color:'#f0ede8'},ticks:{callback:v=>v.toFixed(2)}},x:{grid:{display:false},ticks:{maxRotation:0,font:{size:9}}}}})});
-
-// CRED Avg Rating — real from dashboard
-new Chart(document.getElementById('credRating'),{type:'bar',data:{
-  labels:['UI/UX','Payment','Feature','Loan','Rewards','Support','App','Trust'],
-  datasets:[{data:[3.6,3.4,3.2,2.8,2.5,2.0,2.0,1.7],backgroundColor:['#1d9e75','#1d9e75','#1d9e75','#5dcaa5','#e89170',accent,accent,'#c23a14'],borderRadius:4}]
-},options:base({scales:{y:{beginAtZero:true,max:4.5,grid:{color:'#f0ede8'},ticks:{stepSize:1}},x:{grid:{display:false},ticks:{maxRotation:0,font:{size:9}}}}})});
-
-// MF Funnel — real verified numbers
+// MF Funnel
 new Chart(document.getElementById('mfFunnel'),{type:'bar',data:{
   labels:['All AMFI funds','Large-cap filtered','With 5Y CAGR','Downside protected'],
   datasets:[{data:[14221,342,186,20],backgroundColor:[navy,'#1e4d96','#2d6abf',teal],borderRadius:4}]
@@ -442,23 +482,35 @@ new Chart(document.getElementById('mfFunnel'),{type:'bar',data:{
 const rows=[['Sharpe Ratio','✗','✗'],['Volatility / Drawdown','✗','✗'],['Risk visualisation','✗','✓'],['Sector allocation','✗','✓'],['Fund manager info','✗','✓'],['Investor persona fit','✗','✗'],['Benchmark comparison','✗','✗'],['Expense ratio','✓','✓']];
 document.getElementById('mfTable').innerHTML=rows.map(([f,z,a])=>`<tr><td style="padding:.32rem .5rem;color:var(--ink);border-bottom:1px solid #f5f3f0;font-size:.77rem;">${f}</td><td style="text-align:center;padding:.32rem .5rem;border-bottom:1px solid #f5f3f0;color:${z==='✓'?'var(--teal)':'#d1d5db'};font-size:1rem;">${z}</td><td style="text-align:center;padding:.32rem .5rem;border-bottom:1px solid #f5f3f0;color:${a==='✓'?'var(--teal)':'#d1d5db'};font-size:1rem;">${a}</td></tr>`).join('');
 
-// FlixBus Flag Donut — real numbers from summary sheet
+// Zomato
+new Chart(document.getElementById('zomato'),{type:'bar',data:{
+  labels:['Delivery\nbehaviour','No support\nresponse','Wrong\norder','Refund\nissue','Payment\nissue','App\nissue','Order\ndelay','Other'],
+  datasets:[{data:[29.8,17.8,13.2,11.5,9.4,7.1,6.8,4.4],backgroundColor:[amber,'#b07015','#c4882a','#d89e42','#e8b85c','#f0ca7a','#f5d898','#f8e4b8'],borderRadius:4}]
+},options:{...base({}),plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.parsed.y}% of complaints`}}},scales:{y:{beginAtZero:true,grid:{color:'#f0ede8'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false},ticks:{maxRotation:0,font:{size:9}}}}}});
+
+// FlixBus Flag Donut
 new Chart(document.getElementById('flixFlag'),{type:'doughnut',data:{
   labels:['Too Low (underpriced)','OK (within ±15%)','Too High (overpriced)'],
   datasets:[{data:[15163,7016,3991],backgroundColor:[accent,teal,navy],borderWidth:0,hoverOffset:4}]
 },options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},boxWidth:10,padding:8}},tooltip:{callbacks:{label:ctx=>`${ctx.label}: ${ctx.parsed.toLocaleString()}`}}}}});
 
-// FlixBus Actions — real from summary sheet
+// FlixBus Actions
 new Chart(document.getElementById('flixAction'),{type:'bar',data:{
   labels:['Investigate\nDemand','Maintain','Reduce\nPrice','Increase\nPrice','Slight\nReduce'],
   datasets:[{data:[14402,7827,3893,34,14],backgroundColor:[accent,teal,navy,'#1d9e75','#94a3b8'],borderRadius:4}]
 },options:base({scales:{y:{grid:{color:'#f0ede8'},ticks:{callback:v=>v>=1000?v/1000+'K':v}},x:{grid:{display:false},ticks:{maxRotation:0,font:{size:9}}}}})});
 
-// Zomato — complaint theme % (estimated proportional from BRD findings)
-new Chart(document.getElementById('zomato'),{type:'bar',data:{
-  labels:['Delivery\nbehaviour','No support\nresponse','Wrong\norder','Refund\nissue','Payment\nissue','App\nissue','Order\ndelay','Other'],
-  datasets:[{data:[29.8,17.8,13.2,11.5,9.4,7.1,6.8,4.4],backgroundColor:[amber,'#b07015','#c4882a','#d89e42','#e8b85c','#f0ca7a','#f5d898','#f8e4b8'],borderRadius:4}]
-},options:{...base({}),plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.parsed.y}% of complaints`}}},scales:{y:{beginAtZero:true,grid:{color:'#f0ede8'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false},ticks:{maxRotation:0,font:{size:9}}}}}});
+// CRED Pain Index
+new Chart(document.getElementById('credPain'),{type:'bar',data:{
+  labels:['Rewards\ndevaluation','Customer\nsupport','Payment\nissues','App\nperformance','Trust &\nprivacy','Feature\nrequest','UI/UX','Loan\nissues'],
+  datasets:[{data:[1.00,0.56,0.48,0.19,0.06,0.03,0.02,0.00],backgroundColor:[accent,'#e8693a','#e87d55','#e89170','#eab08e','#ecc4ae','#eed8cc','#f0ede8'],borderRadius:4}]
+},options:base({scales:{y:{beginAtZero:true,max:1.15,grid:{color:'#f0ede8'},ticks:{callback:v=>v.toFixed(2)}},x:{grid:{display:false},ticks:{maxRotation:0,font:{size:9}}}}})});
+
+// CRED Avg Rating
+new Chart(document.getElementById('credRating'),{type:'bar',data:{
+  labels:['UI/UX','Payment','Feature','Loan','Rewards','Support','App','Trust'],
+  datasets:[{data:[3.6,3.4,3.2,2.8,2.5,2.0,2.0,1.7],backgroundColor:['#1d9e75','#1d9e75','#1d9e75','#5dcaa5','#e89170',accent,accent,'#c23a14'],borderRadius:4}]
+},options:base({scales:{y:{beginAtZero:true,max:4.5,grid:{color:'#f0ede8'},ticks:{stepSize:1}},x:{grid:{display:false},ticks:{maxRotation:0,font:{size:9}}}}})});
 </script>
 </body>
 </html>
