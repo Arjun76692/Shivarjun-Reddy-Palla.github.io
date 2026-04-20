@@ -517,10 +517,6 @@ new Chart(document.getElementById('zeroJourney'),{type:'bar',data:{
   datasets:[{label:'Screens',data:[14,7],backgroundColor:[accent,teal],borderRadius:4}]
 },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.parsed.y} screens`}}},scales:{y:{beginAtZero:true,max:18,grid:{color:'#f0ede8'},ticks:{stepSize:2}},x:{grid:{display:false}}}}});
 
-// Zerodha heuristic table
-const zRows=[['Visibility of status',3,3],['Match real world',3,2],['User control',4,3],['Consistency & standards',3,2],['Error prevention',5,4],['Recognition over recall',3,3],['Flexibility',4,3],['Aesthetic design',4,4],['Error recovery',3,3],['Help & docs',2,2]];
-document.getElementById('zeroTable').innerHTML=zRows.map(([h,k,c])=>`<tr><td style="padding:.32rem .5rem;color:var(--ink);border-bottom:1px solid #f5f3f0;font-size:.77rem;">${h}</td><td style="text-align:center;padding:.32rem .5rem;border-bottom:1px solid #f5f3f0;color:${k<=2?'var(--accent)':k>=4?'var(--teal)':'var(--amber)'};font-size:1rem;">${k}/5</td><td style="text-align:center;padding:.32rem .5rem;border-bottom:1px solid #f5f3f0;color:${c<=2?'var(--accent)':c>=4?'var(--teal)':'var(--amber)'};font-size:1rem;">${c}/5</td></tr>`).join('');
-
 // MF Funnel
 new Chart(document.getElementById('mfFunnel'),{type:'bar',data:{
   labels:['All AMFI funds','Large-cap filtered','With 5Y CAGR','Downside protected'],
