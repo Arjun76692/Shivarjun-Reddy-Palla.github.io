@@ -134,6 +134,41 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
   <h2 class="section-title">Projects</h2>
   <p class="section-sub">Self-initiated case studies across fintech, consumer apps, food delivery and transport — each starting from a real business question.</p>
 
+  <!-- ZERODHA -->
+  <div class="pblock">
+    <div class="pbar pbar-teal"></div>
+    <div class="phead">
+      <div class="pdom">Fintech · UX Audit · Primary Research · Competitive Analysis · PRD</div>
+      <h3>Zerodha Kite + Coin — UX Audit, Competitive Analysis &amp; PRD</h3>
+      <p>Interviewed 23 investors to confirm a real friction point: 52% used Zerodha, and every Zerodha user investing in both equities and mutual funds was forced to juggle two apps — Kite and Coin — despite one demat account. Ran a full Nielsen heuristic audit across both apps, mapped the current-state journey (14 screens, 1 mandatory app switch, ~5–6 min) against Angel One (7 screens, 0 switches), and wrote a complete PRD for integrating Coin's MF layer as a native tab inside Kite — without touching Kite's trading tools.</p>
+      <div class="pmeta">
+        <span class="mpill">23 investor interviews</span><span class="mpill">12 Zerodha users</span><span class="mpill">10-heuristic audit</span><span class="mpill">14 vs 7 screens mapped</span><span class="mpill">5 user stories · MoSCoW PRD</span>
+      </div>
+      <div class="ptags"><span class="ptag">UX Research</span><span class="ptag">Heuristic Evaluation</span><span class="ptag">Journey Mapping</span><span class="ptag">Competitive Analysis</span><span class="ptag">PRD</span><span class="ptag">Figma</span></div>
+    </div>
+    <div class="pbody">
+      <div class="pbody-l">
+        <div class="ctitle">Journey steps — Zerodha vs Angel One (stock + SIP invest)</div>
+        <div class="cwrap"><canvas id="zeroJourney"></canvas></div>
+        <a class="plink" href="https://github.com/Arjun76692" target="_blank">↗ View on GitHub</a>
+      </div>
+      <div class="pbody-r">
+        <div class="ctitle">Heuristic scores — Kite vs Coin (Nielsen 1–5)</div>
+        <div style="margin-top:.2rem;font-size:.8rem;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead><tr>
+              <th style="text-align:left;padding:.4rem .5rem;color:var(--muted);font-weight:500;border-bottom:1px solid var(--border);font-size:.75rem;">Heuristic</th>
+              <th style="text-align:center;padding:.4rem .5rem;color:var(--navy);font-weight:600;border-bottom:1px solid var(--border);font-size:.75rem;">Kite</th>
+              <th style="text-align:center;padding:.4rem .5rem;color:var(--muted);font-weight:500;border-bottom:1px solid var(--border);font-size:.75rem;">Coin</th>
+            </tr></thead>
+            <tbody id="zeroTable"></tbody>
+          </table>
+          <div style="font-size:.7rem;color:var(--muted);margin-top:.6rem;font-family:'DM Mono',monospace;">Critical gap: Consistency (H4) — "Portfolio" means different things in each app</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- MUTUAL FUND -->
   <div class="pblock">
     <div class="pbar pbar-navy"></div>
@@ -150,7 +185,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
       <div class="pbody-l">
         <div class="ctitle">Fund universe funnel — 14,221 → 20 downside-protected</div>
         <div class="cwrap"><canvas id="mfFunnel"></canvas></div>
-        <a class="plink" href="https://github.com/Arjun76692/Mutual-Fund-Risk-Adjusted-Performance-Analyzer-" target="_blank">↗ View on GitHub</a>
+        <a class="plink" href="https://github.com/Arjun76692/Mutual-Fund-Risk-Adjusted-Performance-Analyzer-" target="_blank">&#8599; View on GitHub</a>
       </div>
       <div class="pbody-r">
         <div class="ctitle">12-dimension platform gap — Zerodha Coin vs Angel One</div>
@@ -165,7 +200,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
           </table>
           <div style="font-size:.7rem;color:var(--muted);margin-top:.6rem;font-family:'DM Mono',monospace;">Neither platform surfaces Sharpe ratio, volatility or max drawdown</div>
         </div>
-        <a class="plink" href="https://medium.com/@arjunreddy.inc/i-asked-21-people-how-they-pick-mutual-funds-their-answers-shocked-me-5bd6295fd675" target="_blank">↗ Medium write-up</a>
+        <a class="plink" href="https://medium.com/@arjunreddy.inc/i-asked-21-people-how-they-pick-mutual-funds-their-answers-shocked-me-5bd6295fd675" target="_blank">&#8599; Medium write-up</a>
       </div>
     </div>
   </div>
@@ -186,7 +221,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
       <div>
         <div class="ctitle">Complaint theme distribution (% of 3,462 reviews)</div>
         <div class="cwrap"><canvas id="zomato"></canvas></div>
-        <a class="plink" href="https://github.com/Arjun76692/Zomato-Complaint_and_Refund_Resolution_Analysis_and_CaseStudy" target="_blank">↗ View on GitHub</a>
+        <a class="plink" href="https://github.com/Arjun76692/Zomato-Complaint_and_Refund_Resolution_Analysis_and_CaseStudy" target="_blank">&#8599; View on GitHub</a>
       </div>
       <div>
         <div class="ctitle">Model calibration decisions</div>
@@ -228,11 +263,11 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
         <div class="ctitle">PRD — image collection platform</div>
         <div class="bullet-list">
           <div class="bullet-item"><strong>7-step contributor workflow</strong> — login, GPS detection, photo capture with blur check, 200-char description minimum, review screen, offline draft saving, success with district progress</div>
-          <div class="bullet-item"><strong>Admin dashboard</strong> — district coverage heatmap (red &lt;100 / yellow &lt;600 / green ≥1000), image gallery with approve/flag/reject, rejection reason dropdown</div>
+          <div class="bullet-item"><strong>Admin dashboard</strong> — district coverage heatmap (red &lt;100 / yellow &lt;600 / green &#8805;1000), image gallery with approve/flag/reject, rejection reason dropdown</div>
           <div class="bullet-item"><strong>MoSCoW requirements</strong> — 8 Must Have features with documented trade-offs, 2 Should Have features</div>
           <div class="bullet-item"><strong>6 success metrics</strong> tracked: images/day, district coverage %, approval rate, avg description length, draft upload rate, contributor retention</div>
         </div>
-        <a class="plink" href="https://github.com/Arjun76692/JoshTalks_Product_Design-Data_Quality_Analysis_AI-Evaluation_System-" target="_blank">↗ View on GitHub</a>
+        <a class="plink" href="https://github.com/Arjun76692/JoshTalks_Product_Design-Data_Quality_Analysis_AI-Evaluation_System-" target="_blank">&#8599; View on GitHub</a>
       </div>
       <div class="pbody-r">
         <div class="ctitle">Data quality — transcription contributor flagging</div>
@@ -272,11 +307,11 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
             <div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--accent);margin-bottom:.7rem;text-transform:uppercase;">Before</div>
             <div style="display:flex;flex-direction:column;gap:.4rem;font-size:.76rem;color:var(--muted);">
               <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Resume uploaded to Drive</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">↓ manual</div>
+              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; manual</div>
               <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">HR reads PDF</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">↓ manual</div>
+              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; manual</div>
               <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Compare to JD manually</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">↓ manual</div>
+              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; manual</div>
               <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Enter score in sheet</div>
               <div style="background:var(--accent-light);border-radius:5px;padding:.3rem .6rem;font-size:.72rem;color:var(--accent);font-weight:500;margin-top:.2rem;">3–4 hours per batch</div>
             </div>
@@ -285,17 +320,17 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
             <div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--teal);margin-bottom:.7rem;text-transform:uppercase;">After</div>
             <div style="display:flex;flex-direction:column;gap:.4rem;font-size:.76rem;color:var(--muted);">
               <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Upload → n8n trigger fires</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">↓ auto</div>
+              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; auto</div>
               <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">PDF text extracted</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">↓ auto</div>
+              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; auto</div>
               <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Groq LLM scores vs JD</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">↓ auto</div>
+              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; auto</div>
               <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Written to Google Sheets</div>
               <div style="background:var(--teal-light);border-radius:5px;padding:.3rem .6rem;font-size:.72rem;color:var(--teal);font-weight:500;margin-top:.2rem;">&lt;2 minutes per batch</div>
             </div>
           </div>
         </div>
-        <a class="plink" href="https://github.com/Arjun76692/n8n_resume_screening_automation" target="_blank">↗ n8n Automation on GitHub</a>
+        <a class="plink" href="https://github.com/Arjun76692/n8n_resume_screening_automation" target="_blank">&#8599; n8n Automation on GitHub</a>
       </div>
       <div class="pbody-r">
         <div class="ctitle">ETL pipeline — 3 stages across 12.7M rows</div>
@@ -322,7 +357,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
             </div>
           </div>
         </div>
-        <a class="plink" href="https://github.com/Arjun76692/EDA-ETL-Pipeline" target="_blank">↗ ETL Pipeline on GitHub</a>
+        <a class="plink" href="https://github.com/Arjun76692/EDA-ETL-Pipeline" target="_blank">&#8599; ETL Pipeline on GitHub</a>
       </div>
     </div>
   </div>
@@ -371,8 +406,8 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
       <div class="pbody-r">
         <div class="ctitle">Average rating by theme — lower = more severe dissatisfaction</div>
         <div class="cwrap"><canvas id="credRating"></canvas></div>
-        <a class="plink" href="https://github.com/Arjun76692/CRED-Product-Analytics-150K-Reviews" target="_blank">↗ View on GitHub</a>
-        <a class="plink" href="https://medium.com/@arjunreddy.inc/i-analysed-1-50-000-cred-reviews-because-i-got-curious-about-my-own-coins-which-i-got-as-rewards-8ab54d11e6ac" target="_blank" style="margin-left:.5rem;">↗ Medium write-up</a>
+        <a class="plink" href="https://github.com/Arjun76692/CRED-Product-Analytics-150K-Reviews" target="_blank">&#8599; View on GitHub</a>
+        <a class="plink" href="https://medium.com/@arjunreddy.inc/i-analysed-1-50-000-cred-reviews-because-i-got-curious-about-my-own-coins-which-i-got-as-rewards-8ab54d11e6ac" target="_blank" style="margin-left:.5rem;">&#8599; Medium write-up</a>
       </div>
     </div>
   </div>
@@ -393,7 +428,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
         <div class="edate">Jan – Mar 2026</div>
       </div>
       <ul class="ebullets">
-        <li>Collaborated with a 3-member team to build competitor-matching logic across <strong>26,170 routes</strong> — defining criteria on bus type, AC/sleeper/seater classification, bus score (±0.5 buffer), and a <strong>90-minute departure window</strong>.</li>
+        <li>Collaborated with a 3-member team to build competitor-matching logic across <strong>26,170 routes</strong> — defining criteria on bus type, AC/sleeper/seater classification, bus score (&#177;0.5 buffer), and a <strong>90-minute departure window</strong>.</li>
         <li>Jointly designed a weighted average pricing model and load factor metric (seats filled / total seats) — surfacing <strong>15,163 underpriced</strong> and <strong>3,991 overpriced</strong> combinations into a 5-bucket action framework with Medium/High severity tiers for the FlixBus pricing team.</li>
       </ul>
     </div>
@@ -455,10 +490,10 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
       <h3>Let's connect.</h3>
       <p>Open to DA, BA and Product Analyst opportunities. Happy to walk through any project in detail.</p>
       <div class="klinks">
-        <a href="mailto:shivarjunreddypalla@gmail.com" class="klink">✉ shivarjunreddypalla@gmail.com</a>
-        <a href="https://linkedin.com/in/shivarjun-reddy-palla" target="_blank" class="klink">↗ linkedin.com/in/shivarjun-reddy-palla</a>
-        <a href="https://github.com/Arjun76692" target="_blank" class="klink">↗ github.com/Arjun76692</a>
-        <a href="tel:+917658916200" class="klink">☏ +91 76589 16200</a>
+        <a href="mailto:shivarjunreddypalla@gmail.com" class="klink">&#10003; shivarjunreddypalla@gmail.com</a>
+        <a href="https://linkedin.com/in/shivarjun-reddy-palla" target="_blank" class="klink">&#8599; linkedin.com/in/shivarjun-reddy-palla</a>
+        <a href="https://github.com/Arjun76692" target="_blank" class="klink">&#8599; github.com/Arjun76692</a>
+        <a href="tel:+917658916200" class="klink">&#9743; +91 76589 16200</a>
       </div>
     </div>
   </div>
@@ -471,6 +506,20 @@ const navy='#12376E',teal='#0f6e56',accent='#e8421a',amber='#854f0b';
 Chart.defaults.font={family:"'Outfit',sans-serif",size:11};
 Chart.defaults.color='#64748b';
 function base(e){return{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{}}},scales:{y:{grid:{color:'#f0ede8'}},x:{grid:{display:false}}},...e}}
+
+// Zerodha heuristic table
+const zRows=[['Visibility of status',3,3],['Match real world',3,2],['User control',4,3],['Consistency & standards',3,2],['Error prevention',5,4],['Recognition over recall',3,3],['Flexibility',4,3],['Aesthetic design',4,4],['Error recovery',3,3],['Help & docs',2,2]];
+document.getElementById('zeroTable').innerHTML=zRows.map(([h,k,c])=>`<tr><td style="padding:.28rem .5rem;color:var(--ink);border-bottom:1px solid #f5f3f0;font-size:.75rem;">${h}</td><td style="text-align:center;padding:.28rem .5rem;border-bottom:1px solid #f5f3f0;font-size:.8rem;font-weight:600;color:${k<=2?'var(--accent)':k>=4?'var(--teal)':'var(--amber)'};">${k}/5</td><td style="text-align:center;padding:.28rem .5rem;border-bottom:1px solid #f5f3f0;font-size:.8rem;font-weight:600;color:${c<=2?'var(--accent)':c>=4?'var(--teal)':'var(--amber)'};">${c}/5</td></tr>`).join('');
+
+// Zerodha journey comparison chart
+new Chart(document.getElementById('zeroJourney'),{type:'bar',data:{
+  labels:['Zerodha (current)','Angel One (benchmark)'],
+  datasets:[{label:'Screens',data:[14,7],backgroundColor:[accent,teal],borderRadius:4}]
+},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.parsed.y} screens`}}},scales:{y:{beginAtZero:true,max:18,grid:{color:'#f0ede8'},ticks:{stepSize:2}},x:{grid:{display:false}}}}});
+
+// Zerodha heuristic table
+const zRows=[['Visibility of status',3,3],['Match real world',3,2],['User control',4,3],['Consistency & standards',3,2],['Error prevention',5,4],['Recognition over recall',3,3],['Flexibility',4,3],['Aesthetic design',4,4],['Error recovery',3,3],['Help & docs',2,2]];
+document.getElementById('zeroTable').innerHTML=zRows.map(([h,k,c])=>`<tr><td style="padding:.32rem .5rem;color:var(--ink);border-bottom:1px solid #f5f3f0;font-size:.77rem;">${h}</td><td style="text-align:center;padding:.32rem .5rem;border-bottom:1px solid #f5f3f0;color:${k<=2?'var(--accent)':k>=4?'var(--teal)':'var(--amber)'};font-size:1rem;">${k}/5</td><td style="text-align:center;padding:.32rem .5rem;border-bottom:1px solid #f5f3f0;color:${c<=2?'var(--accent)':c>=4?'var(--teal)':'var(--amber)'};font-size:1rem;">${c}/5</td></tr>`).join('');
 
 // MF Funnel
 new Chart(document.getElementById('mfFunnel'),{type:'bar',data:{
