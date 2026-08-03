@@ -3,559 +3,193 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shivarjun Reddy Palla — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<title>Shivarjun Reddy Palla — Product & Growth</title>
 <style>
-:root{--navy:#12376E;--navy-light:#1e4d96;--ink:#1a1a2e;--muted:#64748b;--soft:#94a3b8;--bg:#f8f7f4;--surface:#ffffff;--border:#e2e0db;--accent:#e8421a;--accent-light:#fff0ec;--teal:#0f6e56;--teal-light:#e1f5ee;--amber:#854f0b;--amber-light:#faeeda;--tag-bg:#eef1f8;--tag-text:#12376E}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6}
-nav{position:sticky;top:0;background:rgba(248,247,244,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;padding:0 2rem}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
-.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--navy);text-decoration:none}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{text-decoration:none;font-size:0.85rem;font-weight:500;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--navy)}
-.container{max-width:1100px;margin:0 auto;padding:0 2rem}
-.hero{padding:6rem 2rem 5rem;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center}
-.hero-eyebrow{font-family:'DM Mono',monospace;font-size:0.78rem;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem}
-.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.1;color:var(--ink);margin-bottom:1.5rem}
-.hero h1 em{font-style:italic;color:var(--navy)}
-.hero-desc{font-size:1.05rem;color:var(--muted);max-width:520px;line-height:1.8;margin-bottom:2rem}
-.hero-links{display:flex;gap:1rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.2rem;border-radius:6px;font-size:.88rem;font-weight:500;text-decoration:none;transition:all .2s}
-.btn-primary{background:var(--navy);color:#fff}.btn-primary:hover{background:var(--navy-light)}
-.btn-outline{border:1px solid var(--border);color:var(--muted);background:var(--surface)}.btn-outline:hover{border-color:var(--navy);color:var(--navy)}
-.hero-stats{display:flex;flex-direction:column;gap:1.5rem}
-.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.5rem;text-align:center;min-width:140px}
-.stat-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--navy);display:block}
-.stat-label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem}
-section{padding:5rem 0}section+section{border-top:1px solid var(--border)}
-.section-label{font-family:'DM Mono',monospace;font-size:.72rem;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem}
-.section-title{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--ink);margin-bottom:.5rem}
-.section-sub{font-size:.95rem;color:var(--muted);margin-bottom:3rem;max-width:540px}
-.pblock{background:var(--surface);border:1px solid var(--border);border-radius:16px;margin-bottom:2rem;overflow:hidden}
-.pbar{height:3px}.pbar-accent{background:var(--accent)}.pbar-navy{background:var(--navy)}.pbar-teal{background:var(--teal)}.pbar-amber{background:var(--amber)}.pbar-purple{background:#534AB7}
-.phead{padding:1.8rem 2rem 1.2rem}
-.pdom{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
-.pblock h3{font-size:1.12rem;font-weight:600;color:var(--ink);margin-bottom:.6rem}
-.pblock p{font-size:.88rem;color:var(--muted);line-height:1.75;margin-bottom:1rem}
-.pmeta{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.8rem}
-.mpill{background:var(--tag-bg);color:var(--tag-text);font-size:.74rem;font-weight:500;padding:.25rem .7rem;border-radius:20px;font-family:'DM Mono',monospace}
-.ptags{display:flex;gap:.5rem;flex-wrap:wrap}
-.ptag{background:var(--tag-bg);color:var(--tag-text);font-size:.72rem;padding:.2rem .6rem;border-radius:4px;font-weight:500}
-.pbody{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border)}
-.pbody-l{padding:1.5rem 2rem 2rem;border-right:1px solid var(--border)}
-.pbody-r{padding:1.5rem 2rem 2rem}
-.pbody-full{padding:1.5rem 2rem 2rem;display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;border-top:1px solid var(--border)}
-.pbody-single{padding:1.5rem 2rem 2rem;border-top:1px solid var(--border)}
-.ctitle{font-family:'DM Mono',monospace;font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:1rem}
-.cwrap{position:relative;height:210px}
-.plink{font-size:.8rem;font-weight:500;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:.3rem;padding:.4rem .8rem;border:1px solid var(--border);border-radius:6px;transition:all .2s;margin-top:1rem}
-.plink:hover{border-color:var(--navy);background:var(--tag-bg)}
-.exp-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;margin-bottom:1.2rem}
-.elogo{width:48px;height:48px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'DM Serif Display',serif;font-size:1.1rem;flex-shrink:0}
-.elogo.teal{background:var(--teal)}.elogo.amber{background:var(--amber)}
-.ehead{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.4rem;flex-wrap:wrap;gap:.5rem}
-.etitle{font-size:1rem;font-weight:600;color:var(--ink)}
-.eco{font-size:.85rem;color:var(--muted);margin-bottom:.8rem}
-.edate{font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted);background:var(--bg);padding:.2rem .6rem;border-radius:4px;white-space:nowrap}
-.ebullets{list-style:none}
-.ebullets li{font-size:.88rem;color:var(--muted);padding:.3rem 0 .3rem 1.2rem;position:relative;line-height:1.7}
-.ebullets li::before{content:'→';position:absolute;left:0;color:var(--navy);font-size:.8rem}
-.ebullets strong{color:var(--ink);font-weight:600}
-.inote{display:inline-flex;align-items:center;font-size:.72rem;color:var(--teal);background:var(--teal-light);padding:.2rem .6rem;border-radius:4px;font-weight:500;margin-left:.5rem}
-.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
-.sgrp{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
-.sgtitle{font-size:.78rem;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem;font-family:'DM Mono',monospace}
-.spills{display:flex;flex-wrap:wrap;gap:.5rem}
-.spill{background:var(--bg);border:1px solid var(--border);color:var(--ink);font-size:.8rem;padding:.3rem .75rem;border-radius:6px}
-.crow{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}
-.ccard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.2rem;display:flex;align-items:center;gap:.8rem;flex:1;min-width:200px}
-.cico{width:36px;height:36px;border-radius:8px;background:var(--tag-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--navy);flex-shrink:0}
-.cname{font-size:.85rem;font-weight:500;color:var(--ink)}.ciss{font-size:.75rem;color:var(--muted)}
-.agrid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.atext p{font-size:.95rem;color:var(--muted);line-height:1.9;margin-bottom:1rem}
-.kcard{background:var(--navy);color:#fff;border-radius:16px;padding:2.5rem}
-.kcard h3{font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:.5rem}
-.kcard p{font-size:.88rem;opacity:.7;margin-bottom:2rem;line-height:1.7}
-.klinks{display:flex;flex-direction:column;gap:.8rem}
-.klink{display:flex;align-items:center;gap:.8rem;font-size:.88rem;color:rgba(255,255,255,.85);text-decoration:none;padding:.7rem 1rem;border-radius:8px;background:rgba(255,255,255,.08);transition:background .2s}
-.klink:hover{background:rgba(255,255,255,.15)}
-footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:.8rem;color:var(--soft);font-family:'DM Mono',monospace}
-.edgrid{display:grid;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.5rem;margin-top:.8rem}
-.bullet-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.4rem}
-.bullet-item{font-size:.82rem;color:var(--muted);padding:.5rem .8rem .5rem 1.4rem;position:relative;line-height:1.7;background:var(--bg);border-radius:6px}
-.bullet-item::before{content:'→';position:absolute;left:.5rem;color:var(--navy);font-size:.75rem;top:.52rem}
-.bullet-item strong{color:var(--ink);font-weight:600}
-@media(max-width:768px){
-  .hero{grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem}
-  .hero-stats{flex-direction:row;justify-content:center}
-  .agrid{grid-template-columns:1fr}.exp-card{grid-template-columns:1fr}
-  .pbody{grid-template-columns:1fr}.pbody-l{border-right:none;border-bottom:1px solid var(--border)}
-  .pbody-full{grid-template-columns:1fr}.nav-links{display:none}
-  .container{padding:0 1.5rem}section{padding:3rem 0}
-}
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #666666;
+    --accent: #2563eb;
+    --border: #e5e7eb;
+    --surface: #f9fafb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  header {
+    padding: 3rem 0 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  h2 { font-size: 1.5rem; margin: 2.5rem 0 1rem; }
+  p { color: var(--muted); margin-bottom: 1rem; }
+  .tagline { font-size: 1.1rem; color: var(--text); margin-bottom: 1.5rem; }
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-outline { border: 1px solid var(--border); color: var(--text); }
+  .project {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    background: var(--surface);
+  }
+  .project h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .project-links { margin-top: 1rem; }
+  .project-links a {
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  ul { margin-left: 1.5rem; margin-bottom: 1rem; color: var(--muted); }
+  li { margin-bottom: 0.5rem; }
+  .skills span {
+    display: inline-block;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin: 0 0.3rem 0.5rem 0;
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  @media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    body { padding: 1rem; }
+  }
 </style>
 </head>
 <body>
 
-<nav><div class="nav-inner">
-  <a href="#" class="nav-logo">Shivarjun Reddy Palla</a>
-  <ul class="nav-links">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-</div></nav>
+  <header>
+    <h1>Shivarjun Reddy Palla</h1>
+    <p class="tagline">Looking for my first Product & Growth opportunity.</p>
+    <p>
+      MCA graduate who likes getting his hands dirty. I don't just write strategies; I write Python and SQL code to build prototypes and see if they actually work. I have a genuine interest in GenAI, user research, and solving real problems. I want to bring this technical execution and bias for action to a fast-paced team.
+    </p>
+    <a href="https://www.linkedin.com/in/shivarjun-reddy-palla/" target="_blank" class="btn btn-primary">LinkedIn</a>
+    <a href="https://github.com/Arjun76692" target="_blank" class="btn btn-outline">GitHub</a>
+    <a href="mailto:shivarjunreddypalla@gmail.com" class="btn btn-outline">Email Me</a>
+  </header>
 
-<div class="hero">
-  <div>
-    <div class="hero-eyebrow">Data · Product · Business Analysis</div>
-    <h1>Validate the gap<br>with data first,<br><em>then build.</em></h1>
-    <p class="hero-desc">MCA graduate (CGPA 8.5) based in Hyderabad. I work across the full analysis cycle — from messy raw data to structured requirements, dashboards, and stakeholder-ready outputs. Targeting DA / BA / Product Analyst roles.</p>
-    <div class="hero-links">
-      <a href="#projects" class="btn btn-primary">View projects</a>
-      <a href="https://linkedin.com/in/shivarjun-reddy-palla" target="_blank" class="btn btn-outline">LinkedIn</a>
-      <a href="https://github.com/Arjun76692" target="_blank" class="btn btn-outline">GitHub</a>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div class="stat-card"><span class="stat-num">150K+</span><span class="stat-label">Reviews analysed</span></div>
-    <div class="stat-card"><span class="stat-num">26K+</span><span class="stat-label">Routes flagged</span></div>
-    <div class="stat-card"><span class="stat-num">12.7M</span><span class="stat-label">Rows in ETL</span></div>
-  </div>
-</div>
+  <section>
+    <h2>Projects & Case Studies</h2>
+    <p>Here is the work I've built to prove I can do the job.</p>
 
-<section id="projects"><div class="container">
-  <div class="section-label">Portfolio</div>
-  <h2 class="section-title">Projects</h2>
-  <p class="section-sub">Self-initiated case studies across fintech, consumer apps, food delivery and transport — each starting from a real business question.</p>
-
-  <!-- ZERODHA -->
-  <div class="pblock">
-    <div class="pbar pbar-teal"></div>
-    <div class="phead">
-      <div class="pdom">Fintech · UX Audit · Primary Research · Competitive Analysis · PRD</div>
-      <h3>Zerodha Kite + Coin — UX Audit, Competitive Analysis &amp; PRD</h3>
-      <p>Interviewed 23 investors to confirm a real friction point: 52% used Zerodha, and every Zerodha user investing in both equities and mutual funds was forced to juggle two apps — Kite and Coin — despite one demat account. Ran a full Nielsen heuristic audit across both apps, mapped the current-state journey (14 screens, 1 mandatory app switch, ~5–6 min) against Angel One (7 screens, 0 switches), and wrote a complete PRD for integrating Coin's MF layer as a native tab inside Kite — without touching Kite's trading tools.</p>
-      <div class="pmeta">
-        <span class="mpill">23 investor interviews</span><span class="mpill">12 Zerodha users</span><span class="mpill">10-heuristic audit</span><span class="mpill">14 vs 7 screens mapped</span><span class="mpill">5 user stories · MoSCoW PRD</span>
-      </div>
-      <div class="ptags"><span class="ptag">UX Research</span><span class="ptag">Heuristic Evaluation</span><span class="ptag">Journey Mapping</span><span class="ptag">Competitive Analysis</span><span class="ptag">PRD</span><span class="ptag">Figma</span></div>
-    </div>
-    <div class="pbody">
-      <div class="pbody-l">
-        <div class="ctitle">Journey steps — Zerodha vs Angel One (stock + SIP invest)</div>
-        <div class="cwrap"><canvas id="zeroJourney"></canvas></div>
-        <a class="plink" href="https://github.com/Arjun76692/Zerodha_ux_case_study_and_redesign" target="_blank">↗ View on GitHub</a>
-      </div>
-      <div class="pbody-r">
-        <div class="ctitle">Heuristic scores — Kite vs Coin (Nielsen 1–5)</div>
-        <div style="margin-top:.2rem;font-size:.8rem;">
-          <table style="width:100%;border-collapse:collapse;">
-            <thead><tr>
-              <th style="text-align:left;padding:.4rem .5rem;color:var(--muted);font-weight:500;border-bottom:1px solid var(--border);font-size:.75rem;">Heuristic</th>
-              <th style="text-align:center;padding:.4rem .5rem;color:var(--navy);font-weight:600;border-bottom:1px solid var(--border);font-size:.75rem;">Kite</th>
-              <th style="text-align:center;padding:.4rem .5rem;color:var(--muted);font-weight:500;border-bottom:1px solid var(--border);font-size:.75rem;">Coin</th>
-            </tr></thead>
-            <tbody id="zeroTable"></tbody>
-          </table>
-          <div style="font-size:.7rem;color:var(--muted);margin-top:.6rem;font-family:'DM Mono',monospace;">Critical gap: Consistency (H4) — "Portfolio" means different things in each app</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MUTUAL FUND -->
-  <div class="pblock">
-    <div class="pbar pbar-navy"></div>
-    <div class="phead">
-      <div class="pdom">Fintech · Primary Research · Competitive Analysis · PRD</div>
-      <h3>Mutual Fund Risk-Aware Discovery — Competitive Analysis &amp; PRD</h3>
-      <p>Started by asking 21 people how they pick mutual funds. 76% had never tracked a risk metric. Then confirmed via 12-point screenshot comparison of Zerodha Coin and Angel One that neither platform surfaces Sharpe ratio, volatility, or max drawdown — despite all metrics being computable from available data. Fetched live NAV data for 14,221 funds via API, computed risk metrics from scratch, and wrote a full PRD for the missing feature.</p>
-      <div class="pmeta">
-        <span class="mpill">14,221 funds sourced</span><span class="mpill">342 large-cap analysed</span><span class="mpill">20 downside-protected</span><span class="mpill">76% survey gap confirmed</span>
-      </div>
-      <div class="ptags"><span class="ptag">Python</span><span class="ptag">MySQL</span><span class="ptag">mftool API</span><span class="ptag">SQLAlchemy</span><span class="ptag">PRD</span><span class="ptag">Competitive Analysis</span></div>
-    </div>
-    <div class="pbody">
-      <div class="pbody-l">
-        <div class="ctitle">Fund universe funnel — 14,221 → 20 downside-protected</div>
-        <div class="cwrap"><canvas id="mfFunnel"></canvas></div>
-        <a class="plink" href="https://github.com/Arjun76692/Mutual-Fund-Risk-Adjusted-Performance-Analyzer-" target="_blank">&#8599; View on GitHub</a>
-      </div>
-      <div class="pbody-r">
-        <div class="ctitle">12-dimension platform gap — Zerodha Coin vs Angel One</div>
-        <div style="margin-top:.2rem;font-size:.8rem;">
-          <table style="width:100%;border-collapse:collapse;">
-            <thead><tr>
-              <th style="text-align:left;padding:.4rem .5rem;color:var(--muted);font-weight:500;border-bottom:1px solid var(--border);font-size:.75rem;">Feature</th>
-              <th style="text-align:center;padding:.4rem .5rem;color:var(--navy);font-weight:600;border-bottom:1px solid var(--border);font-size:.75rem;">Zerodha</th>
-              <th style="text-align:center;padding:.4rem .5rem;color:var(--muted);font-weight:500;border-bottom:1px solid var(--border);font-size:.75rem;">Angel One</th>
-            </tr></thead>
-            <tbody id="mfTable"></tbody>
-          </table>
-          <div style="font-size:.7rem;color:var(--muted);margin-top:.6rem;font-family:'DM Mono',monospace;">Neither platform surfaces Sharpe ratio, volatility or max drawdown</div>
-        </div>
-        <a class="plink" href="https://medium.com/@arjunreddy.inc/i-asked-21-people-how-they-pick-mutual-funds-their-answers-shocked-me-5bd6295fd675" target="_blank">&#8599; Medium write-up</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ZOMATO -->
-  <div class="pblock">
-    <div class="pbar pbar-amber"></div>
-    <div class="phead">
-      <div class="pdom">Food Delivery · DeBERTa NLP · MySQL · BRD</div>
-      <h3>Zomato — Complaint &amp; Refund Resolution Case Study</h3>
-      <p>Scraped 30K Zomato reviews and classified 3,462 complaint reviews into 10 themes using DeBERTa NLP (zero-shot, multi-label, threshold 0.70, TOP_K=2). Found via co-occurrence analysis that support failure and refund delays almost always appear in the same review — they share a root cause, not just a surface pattern. Multi-category spikes on Mar 8–9 and Mar 17–18 confirmed systemic operational failures. Translated everything into a BRD with 9 Must Have requirements and 5 stakeholder-mapped user stories.</p>
-      <div class="pmeta">
-        <span class="mpill">3,462 reviews classified</span><span class="mpill">10 complaint themes</span><span class="mpill">4 process stages</span><span class="mpill">9 functional requirements</span>
-      </div>
-      <div class="ptags"><span class="ptag">Python</span><span class="ptag">DeBERTa NLP</span><span class="ptag">MySQL</span><span class="ptag">SQLAlchemy</span><span class="ptag">BRD</span></div>
-    </div>
-    <div class="pbody-full">
-      <div>
-        <div class="ctitle">Complaint theme distribution (% of 3,462 reviews)</div>
-        <div class="cwrap"><canvas id="zomato"></canvas></div>
-        <a class="plink" href="https://github.com/Arjun76692/Zomato-Complaint_and_Refund_Resolution_Analysis_and_CaseStudy" target="_blank">&#8599; View on GitHub</a>
-      </div>
-      <div>
-        <div class="ctitle">Model calibration decisions</div>
-        <div style="display:flex;flex-direction:column;gap:.7rem;margin-top:.2rem;">
-          <div style="background:var(--bg);border-radius:8px;padding:.9rem 1rem;">
-            <div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);margin-bottom:.25rem;">MODEL SELECTION</div>
-            <div style="font-size:.84rem;color:var(--ink);font-weight:500;">DeBERTa (zero-shot) via Hugging Face</div>
-            <div style="font-size:.77rem;color:var(--muted);margin-top:.15rem;">Chosen for zero-shot capability — no labelled training data needed. Validated on test phrases before full run: 90–96% confidence, correct classification.</div>
-          </div>
-          <div style="background:var(--bg);border-radius:8px;padding:.9rem 1rem;">
-            <div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);margin-bottom:.25rem;">THRESHOLD CALIBRATION</div>
-            <div style="font-size:.84rem;color:var(--ink);font-weight:500;">0.90 → 0.80 → 0.75 → <span style="color:var(--teal)">0.70 ✓</span></div>
-            <div style="font-size:.77rem;color:var(--muted);margin-top:.15rem;">0.90 forced single-category only. Iterated to find balance between precision and dual-category coverage. 0.70 gave the best signal-to-noise on complaint reviews.</div>
-          </div>
-          <div style="background:var(--bg);border-radius:8px;padding:.9rem 1rem;">
-            <div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);margin-bottom:.25rem;">TOP-K CONSTRAINT</div>
-            <div style="font-size:.84rem;color:var(--ink);font-weight:500;">Top-K = 2 per review</div>
-            <div style="font-size:.77rem;color:var(--muted);margin-top:.15rem;">Each review assigned to at most 2 categories above threshold. Prevents over-labelling while capturing genuine multi-theme complaints like support + refund.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- JOSHTALKS -->
-  <div class="pblock">
-    <div class="pbar pbar-purple"></div>
-    <div class="phead">
-      <div class="pdom">Product Design · Data Quality · Voice AI Evaluation</div>
-      <h3>JoshTalks — Product Design, Data Quality &amp; AI Evaluation</h3>
-      <p>Three connected deliverables for JoshTalks: a full PRD for a mobile image collection platform, a behavioural quality system for 51,783 transcription tasks, and a Voice AI evaluation framework. All aimed at the same problem — making training data reliable at scale.</p>
-      <div class="pmeta">
-        <span class="mpill">51,783 tasks analysed</span><span class="mpill">7-step contributor workflow</span><span class="mpill">3-tier escalation system</span><span class="mpill">4 AI eval criteria</span>
-      </div>
-      <div class="ptags"><span class="ptag">PRD</span><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">Data Quality</span><span class="ptag">Process Design</span><span class="ptag">AI Evaluation</span></div>
-    </div>
-    <div class="pbody">
-      <div class="pbody-l">
-        <div class="ctitle">PRD — image collection platform</div>
-        <div class="bullet-list">
-          <div class="bullet-item"><strong>7-step contributor workflow</strong> — login, GPS detection, photo capture with blur check, 200-char description minimum, review screen, offline draft saving, success with district progress</div>
-          <div class="bullet-item"><strong>Admin dashboard</strong> — district coverage heatmap (red &lt;100 / yellow &lt;600 / green &#8805;1000), image gallery with approve/flag/reject, rejection reason dropdown</div>
-          <div class="bullet-item"><strong>MoSCoW requirements</strong> — 8 Must Have features with documented trade-offs, 2 Should Have features</div>
-          <div class="bullet-item"><strong>6 success metrics</strong> tracked: images/day, district coverage %, approval rate, avg description length, draft upload rate, contributor retention</div>
-        </div>
-        <a class="plink" href="https://github.com/Arjun76692/JoshTalks_Product_Design-Data_Quality_Analysis_AI-Evaluation_System-" target="_blank">&#8599; View on GitHub</a>
-      </div>
-      <div class="pbody-r">
-        <div class="ctitle">Data quality — transcription contributor flagging</div>
-        <div class="bullet-list" style="margin-bottom:1.2rem;">
-          <div class="bullet-item"><strong>Signal 1:</strong> Speed ratio &lt;1.0 on clips &gt;5s — submitted before audio finished. 5,957 tasks flagged (11.5%)</div>
-          <div class="bullet-item"><strong>Signal 2:</strong> No-edit submissions — passed Whisper output unchanged without reviewing. 8,591 tasks (16.6%)</div>
-          <div class="bullet-item"><strong>Signal 3:</strong> Repeated placeholder text — 10 users submitted same text up to 64 times across different clips</div>
-          <div class="bullet-item"><strong>3-tier response:</strong> task rejection → flag for human review → account suspension. No auto-block until 10+ tasks to avoid wrongly penalising genuine contributors</div>
-        </div>
-        <div class="ctitle">Voice AI evaluation framework</div>
-        <div class="bullet-list">
-          <div class="bullet-item"><strong>4 scored criteria:</strong> task completion (primary), comprehension accuracy, naturalness, error recovery</div>
-          <div class="bullet-item"><strong>AI-assisted triage:</strong> limits full human review to 250–350 of every 1,000 conversations</div>
-          <div class="bullet-item"><strong>Consistency check:</strong> auto-flag when evaluator score deviates &gt;2 points from team average</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- N8N + ETL -->
-  <div class="pblock">
-    <div class="pbar pbar-navy"></div>
-    <div class="phead">
-      <div class="pdom">Automation · Process Design · LLM · ETL</div>
-      <h3>AI Resume Screening + Large-Scale ETL Pipeline</h3>
-      <p>Built an end-to-end n8n pipeline using Groq LLM for JD-to-resume scoring — triggered on Google Drive upload, extracts PDF text, merges with JD, scores via AI agent, writes to Google Sheets. Separately built a 3-stage Python ETL pipeline for a 12.7M-row retail dataset with SQL joins across 3 sources and structured error logging.</p>
-      <div class="pmeta">
-        <span class="mpill">3–4 hrs → &lt;2 min</span><span class="mpill">12.7M rows processed</span><span class="mpill">3 data sources joined</span><span class="mpill">$14.1M sales analysed</span>
-      </div>
-      <div class="ptags"><span class="ptag">n8n</span><span class="ptag">Groq LLM</span><span class="ptag">Google Drive API</span><span class="ptag">Python ETL</span><span class="ptag">SQL CTEs</span><span class="ptag">Power BI</span></div>
-    </div>
-    <div class="pbody">
-      <div class="pbody-l">
-        <div class="ctitle">Resume screening — before vs after automation</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:.4rem;">
-          <div style="background:var(--bg);border-radius:8px;padding:.9rem;">
-            <div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--accent);margin-bottom:.7rem;text-transform:uppercase;">Before</div>
-            <div style="display:flex;flex-direction:column;gap:.4rem;font-size:.76rem;color:var(--muted);">
-              <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Resume uploaded to Drive</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; manual</div>
-              <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">HR reads PDF</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; manual</div>
-              <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Compare to JD manually</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; manual</div>
-              <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Enter score in sheet</div>
-              <div style="background:var(--accent-light);border-radius:5px;padding:.3rem .6rem;font-size:.72rem;color:var(--accent);font-weight:500;margin-top:.2rem;">3–4 hours per batch</div>
-            </div>
-          </div>
-          <div style="background:var(--bg);border-radius:8px;padding:.9rem;">
-            <div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--teal);margin-bottom:.7rem;text-transform:uppercase;">After</div>
-            <div style="display:flex;flex-direction:column;gap:.4rem;font-size:.76rem;color:var(--muted);">
-              <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Upload → n8n trigger fires</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; auto</div>
-              <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">PDF text extracted</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; auto</div>
-              <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Groq LLM scores vs JD</div>
-              <div style="text-align:center;font-size:.65rem;color:var(--soft);">&#8595; auto</div>
-              <div style="background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:.4rem .6rem;">Written to Google Sheets</div>
-              <div style="background:var(--teal-light);border-radius:5px;padding:.3rem .6rem;font-size:.72rem;color:var(--teal);font-weight:500;margin-top:.2rem;">&lt;2 minutes per batch</div>
-            </div>
-          </div>
-        </div>
-        <a class="plink" href="https://github.com/Arjun76692/n8n_resume_screening_automation" target="_blank">&#8599; n8n Automation on GitHub</a>
-      </div>
-      <div class="pbody-r">
-        <div class="ctitle">ETL pipeline — 3 stages across 12.7M rows</div>
-        <div style="display:flex;flex-direction:column;gap:.8rem;margin-top:.4rem;">
-          <div style="display:flex;gap:.8rem;align-items:flex-start;">
-            <div style="width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:.1rem;">1</div>
-            <div style="background:var(--bg);border-radius:8px;padding:.8rem 1rem;flex:1;">
-              <div style="font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:.2rem;">Ingest</div>
-              <div style="font-size:.77rem;color:var(--muted);">Chunked reads for memory safety. Schema validation on load. Handles multiple source formats. 5-minute timeout per step with hard stop on failure.</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:.8rem;align-items:flex-start;">
-            <div style="width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:.1rem;">2</div>
-            <div style="background:var(--bg);border-radius:8px;padding:.8rem 1rem;flex:1;">
-              <div style="font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:.2rem;">Clean &amp; Enrich</div>
-              <div style="font-size:.77rem;color:var(--muted);">Null handling, dtype fixes, outlier checks. Derived fields: gross profit, margin, stock turnover, unsold inventory.</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:.8rem;align-items:flex-start;">
-            <div style="width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:.1rem;">3</div>
-            <div style="background:var(--bg);border-radius:8px;padding:.8rem 1rem;flex:1;">
-              <div style="font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:.2rem;">Load &amp; Report</div>
-              <div style="font-size:.77rem;color:var(--muted);">CTEs joining 3 sources into MySQL fact table. Dual logging to file + stdout. Findings visualised in Power BI — 8 of 12 months declining, 3 loss-making SKUs, 13.5% pricing gap.</div>
-            </div>
-          </div>
-        </div>
-        <a class="plink" href="https://github.com/Arjun76692/EDA-ETL-Pipeline" target="_blank">&#8599; ETL Pipeline on GitHub</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- FLIXBUS -->
-  <div class="pblock">
-    <div class="pbar pbar-teal"></div>
-    <div class="phead">
-      <div class="pdom">Transport Pricing · Real Dataset · Team of 3</div>
-      <h3>Pricing Analytics — FlixBus India <span class="inote">Selected via open application · Jan–Mar 2026</span></h3>
-      <p>Worked on a real FlixBus India pricing dataset alongside a 3-member team selected through an open application. Built competitor-matching logic from scratch — no predefined criteria — and translated pricing gaps into a 5-bucket action framework across 26,170 routes.</p>
-      <div class="pmeta">
-        <span class="mpill">26,170 routes</span><span class="mpill">15,163 underpriced</span><span class="mpill">3,991 overpriced</span><span class="mpill">73.2% flag rate</span>
-      </div>
-      <div class="ptags"><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">SQL</span><span class="ptag">Excel</span><span class="ptag">Pricing Analysis</span></div>
-    </div>
-    <div class="pbody">
-      <div class="pbody-l">
-        <div class="ctitle">Pricing flag distribution — 26,170 routes</div>
-        <div class="cwrap"><canvas id="flixFlag"></canvas></div>
-      </div>
-      <div class="pbody-r">
-        <div class="ctitle">Recommended action by route count</div>
-        <div class="cwrap"><canvas id="flixAction"></canvas></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CRED -->
-  <div class="pblock">
-    <div class="pbar pbar-accent"></div>
-    <div class="phead">
-      <div class="pdom">Consumer App · Python · Power BI</div>
-      <h3>CRED App — User Pain Point Analysis &amp; Product Brief</h3>
-      <p>Noticed CRED had a 4.2 rating but my own coins felt increasingly worthless. Scraped 150K+ reviews to check if other users felt the same, built a weighted Pain Index, and found rewards-related feedback averaged 2.48 stars vs the app's 4.20 overall.</p>
-      <div class="pmeta">
-        <span class="mpill">134,552 valid reviews</span><span class="mpill">Pain score 1.00 on #1 issue</span><span class="mpill">22,619 upvotes</span><span class="mpill">Platform-wide — not version-specific</span>
-      </div>
-      <div class="ptags"><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">Power BI</span><span class="ptag">Product Brief</span></div>
-    </div>
-    <div class="pbody">
-      <div class="pbody-l">
-        <div class="ctitle">Pain Index by complaint theme (Power BI verified)</div>
-        <div class="cwrap"><canvas id="credPain"></canvas></div>
-      </div>
-      <div class="pbody-r">
-        <div class="ctitle">Average rating by theme — lower = more severe dissatisfaction</div>
-        <div class="cwrap"><canvas id="credRating"></canvas></div>
-        <a class="plink" href="https://github.com/Arjun76692/CRED-Product-Analytics-150K-Reviews" target="_blank">&#8599; View on GitHub</a>
-        <a class="plink" href="https://medium.com/@arjunreddy.inc/i-analysed-1-50-000-cred-reviews-because-i-got-curious-about-my-own-coins-which-i-got-as-rewards-8ab54d11e6ac" target="_blank" style="margin-left:.5rem;">&#8599; Medium write-up</a>
-      </div>
-    </div>
-  </div>
-
-</div></section>
-
-<!-- EXPERIENCE -->
-<section id="experience"><div class="container">
-  <div class="section-label">Work</div>
-  <h2 class="section-title">Experience</h2>
-  <p class="section-sub">Freelance analytical work with real clients, real datasets, and real stakeholders.</p>
-
-  <div class="exp-card">
-    <div class="elogo teal">Fx</div>
-    <div>
-      <div class="ehead">
-        <div><div class="etitle">Freelance Pricing Analyst — FlixBus India</div><div class="eco">Selected via open application · Pricing analysis project · Team of 3</div></div>
-        <div class="edate">Jan – Mar 2026</div>
-      </div>
-      <ul class="ebullets">
-        <li>Collaborated with a 3-member team to build competitor-matching logic across <strong>26,170 routes</strong> — defining criteria on bus type, AC/sleeper/seater classification, bus score (&#177;0.5 buffer), and a <strong>90-minute departure window</strong>.</li>
-        <li>Jointly designed a weighted average pricing model and load factor metric (seats filled / total seats) — surfacing <strong>15,163 underpriced</strong> and <strong>3,991 overpriced</strong> combinations into a 5-bucket action framework with Medium/High severity tiers for the FlixBus pricing team.</li>
+    <div class="project">
+      <h3>Zomato Review Analysis Dashboard</h3>
+      <p><strong>The Problem:</strong> Ops teams reading 30,000+ app reviews manually to find complaints.</p>
+      <ul>
+        <li>Scraped 30,000+ unstructured user reviews using a Python API to understand why users were churning.</li>
+        <li>Implemented a HuggingFace zero-shot DeBERTa v3 model to automatically group messy text reviews into operational themes.</li>
+        <li>Built a live Streamlit web dashboard so non-technical teams could filter the AI-categorized data and find root causes without SQL.</li>
       </ul>
-    </div>
-  </div>
-
-  <div class="exp-card">
-    <div class="elogo amber">JG</div>
-    <div>
-      <div class="ehead">
-        <div><div class="etitle">Freelance Data Analyst — Johnson Grammar School</div><div class="eco">Operations analytics · Team of 5 · Reporting to school leadership</div></div>
-        <div class="edate">Sep – Nov 2025</div>
+      <div class="project-links">
+        <a href="https://zomato-complaint-resolution.streamlit.app/" target="_blank">Live App ↗</a>
+        <a href="https://github.com/Arjun76692/Zomato-Complaint_and_Refund_Resolution_Analysis_and_CaseStudy" target="_blank">GitHub ↗</a>
       </div>
-      <ul class="ebullets">
-        <li>Worked within a 5-member team to analyse student transport data across <strong>27 bus routes</strong> — built a weighted route efficiency score combining bus utilisation (40%), detour ratio (30%), and students-per-stop density (30%) using Python and Pandas.</li>
-        <li>Identified consolidation opportunities that reduced <strong>27 routes to 24</strong> by merging low-utilisation routes within shared geographic zones — flagged high-detour routes (ratio &gt;1.4) and low-density stops (&lt;4 students) for removal, presenting findings directly to school leadership.</li>
+    </div>
+
+    <div class="project">
+      <h3>Smart Spend Reward Tracker</h3>
+      <p><strong>The Problem:</strong> Banks silently change credit card reward rules, and users lose money without knowing.</p>
+      <ul>
+        <li>Conducted user interviews to validate the problem and wrote a V1-V3 product strategy and PRD.</li>
+        <li>Built a flat-file dataset mapping 15 credit cards across 300+ spend categories, including tiered rates and monthly caps.</li>
+        <li>Used AI tools (Claude) to rapidly prototype and build a live Streamlit web app, proving the calculation logic works in under 5 seconds.</li>
       </ul>
-    </div>
-  </div>
-
-</div></section>
-
-<!-- SKILLS -->
-<section id="skills"><div class="container">
-  <div class="section-label">Capabilities</div>
-  <h2 class="section-title">Skills</h2>
-  <p class="section-sub">Technical and product skills built through projects, not just coursework.</p>
-  <div class="sgrid">
-    <div class="sgrp"><div class="sgtitle">Product</div><div class="spills"><span class="spill">PRD / BRD writing</span><span class="spill">MoSCoW prioritisation</span><span class="spill">User stories</span><span class="spill">Acceptance criteria</span><span class="spill">Competitive analysis</span><span class="spill">Roadmap definition</span><span class="spill">Success metrics</span><span class="spill">Persona mapping</span><span class="spill">Edge case identification</span></div></div>
-    <div class="sgrp"><div class="sgtitle">Analytics</div><div class="spills"><span class="spill">Exploratory data analysis</span><span class="spill">KPI design &amp; tracking</span><span class="spill">NLP classification</span><span class="spill">Complaint analysis</span><span class="spill">Cohort analysis</span><span class="spill">Survey design</span><span class="spill">Load factor modelling</span><span class="spill">Version concentration analysis</span></div></div>
-    <div class="sgrp"><div class="sgtitle">Programming &amp; Data</div><div class="spills"><span class="spill">Python (Pandas, NumPy)</span><span class="spill">SQL (MySQL, CTEs, joins)</span><span class="spill">ETL pipeline design</span><span class="spill">DeBERTa zero-shot NLP</span><span class="spill">n8n automation</span><span class="spill">Groq LLM</span><span class="spill">mftool API</span><span class="spill">SQLAlchemy</span><span class="spill">Git</span></div></div>
-    <div class="sgrp"><div class="sgtitle">BI &amp; Reporting</div><div class="spills"><span class="spill">Power BI (DAX, dashboards)</span><span class="spill">Excel (Pivot, VLOOKUP)</span><span class="spill">Google Sheets</span><span class="spill">Figma</span><span class="spill">Jira</span></div></div>
-  </div>
-  <div style="margin-top:3rem;"><div class="section-label">Certifications &amp; Achievements</div>
-  <div class="crow">
-    <div class="ccard"><div class="cico">G</div><div><div class="cname">Google Data Analytics</div><div class="ciss">Coursera · Mar 2025</div></div></div>
-    <div class="ccard"><div class="cico">A</div><div><div class="cname">Accenture Tech Consulting</div><div class="ciss">Forage · Agile, user stories, backlog</div></div></div>
-    <div class="ccard"><div class="cico">H</div><div><div class="cname">HackerRank SQL</div><div class="ciss">Gold Badge</div></div></div>
-    <div class="ccard"><div class="cico">L</div><div><div class="cname">LeetCode SQL</div><div class="ciss">Top 15% Globally</div></div></div>
-  </div></div>
-</div></section>
-
-<!-- ABOUT -->
-<section id="about"><div class="container">
-  <div class="agrid">
-    <div class="atext">
-      <div class="section-label">About</div>
-      <h2 class="section-title">Background</h2>
-      <p>MCA graduate (CGPA 8.5/10) from RBVRR Institute of Technology, Osmania University, Hyderabad. I build analysis around a business question — not a dataset. Every project starts with validating a real gap, then building the data case for it.</p>
-      <p>I've done freelance analytical work on a real FlixBus India pricing dataset (team of 3, selected via open application) and transport routing data for Johnson Grammar School (team of 5, reporting to school leadership). Both involved real stakeholders and actual deliverables.</p>
-      <p>Currently targeting Data Analyst, Business Analyst and Product Analyst roles in Hyderabad or Bangalore. Open to relocation across metro cities.</p>
-      <div style="margin-top:1.5rem;"><div class="section-label">Education</div>
-      <div class="edgrid">
-        <div style="font-weight:600;color:var(--ink);">Master of Computer Applications (MCA)</div>
-        <div style="font-size:.85rem;color:var(--muted);margin-top:.2rem;">RBVRR Institute of Technology, Osmania University · 2023–2025</div>
-        <div style="margin-top:.5rem;font-family:'DM Mono',monospace;font-size:.8rem;color:var(--navy);background:var(--tag-bg);display:inline-block;padding:.2rem .6rem;border-radius:4px;">CGPA 8.5 / 10</div>
-      </div></div>
-    </div>
-    <div class="kcard">
-      <h3>Let's connect.</h3>
-      <p>Open to DA, BA and Product Analyst opportunities. Happy to walk through any project in detail.</p>
-      <div class="klinks">
-        <a href="mailto:shivarjunreddypalla@gmail.com" class="klink">&#10003; shivarjunreddypalla@gmail.com</a>
-        <a href="https://linkedin.com/in/shivarjun-reddy-palla" target="_blank" class="klink">&#8599; linkedin.com/in/shivarjun-reddy-palla</a>
-        <a href="https://github.com/Arjun76692" target="_blank" class="klink">&#8599; github.com/Arjun76692</a>
-        <a href="tel:+917658916200" class="klink">&#9743; +91 76589 16200</a>
+      <div class="project-links">
+        <a href="https://cred-smart-spend-enginegit-trr2h2xtj3r8vdd746pb5z.streamlit.app/" target="_blank">Live App ↗</a>
+        <a href="https://docs.google.com/document/d/1TnMwkxPSnLk_GCS2Y-BKtAvU8kBLnaf4/edit?usp=sharing" target="_blank">Case Study / PRD ↗</a>
       </div>
     </div>
-  </div>
-</div></section>
 
-<footer><div>Shivarjun Reddy Palla · Hyderabad · 2026</div></footer>
+    <div class="project">
+      <h3>Gemini vs. Competitors Market Strategy</h3>
+      <p><strong>The Problem:</strong> Understanding why certain AI tools gain market share while others don't.</p>
+      <ul>
+        <li>Conducted market research on AI tools, analyzing why Gemini's market share grew from 5.7% to 25.5%.</li>
+        <li>Mapped user personas to identify a critical product gap causing power-user churn to competitors like Claude.</li>
+        <li>Defined a 4-feature product backlog and prioritized it using the RICE framework to maximize user impact.</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://drive.google.com/file/d/1vMDiQG_YN1cyAgbJ_fqRyihM_aR-ZjX5/view?usp=sharing" target="_blank">Strategy Deck ↗</a>
+      </div>
+    </div>
 
-<script>
-const navy='#12376E',teal='#0f6e56',accent='#e8421a',amber='#854f0b';
-Chart.defaults.font={family:"'Outfit',sans-serif",size:11};
-Chart.defaults.color='#64748b';
-function base(e){return{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{}}},scales:{y:{grid:{color:'#f0ede8'}},x:{grid:{display:false}}},...e}}
+    <div class="project">
+      <h3>Angel One Advisory Feature Analysis</h3>
+      <p><strong>The Problem:</strong> Does an in-app advisory feature actually make money for users?</p>
+      <ul>
+        <li>Tracked 31 live transactions in Excel to test if the feature actually delivered positive ROI.</li>
+        <li>Built a model calculating net returns after operational fees, identifying a flaw where fixed costs destroyed value for small-capital users.</li>
+        <li>Recommended repositioning the feature toward Rs. 50K+ accounts, where the unit economics actually hold up.</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://drive.google.com/file/d/1JiNrlcGpf6psuq-dyTFX1P9-p53rv05C/view?usp=sharing" target="_blank">Case Study ↗</a>
+      </div>
+    </div>
+  </section>
 
-// Zerodha heuristic table
-const zRows=[['Visibility of status',3,3],['Match real world',3,2],['User control',4,3],['Consistency & standards',3,2],['Error prevention',5,4],['Recognition over recall',3,3],['Flexibility',4,3],['Aesthetic design',4,4],['Error recovery',3,3],['Help & docs',2,2]];
-document.getElementById('zeroTable').innerHTML=zRows.map(([h,k,c])=>`<tr><td style="padding:.28rem .5rem;color:var(--ink);border-bottom:1px solid #f5f3f0;font-size:.75rem;">${h}</td><td style="text-align:center;padding:.28rem .5rem;border-bottom:1px solid #f5f3f0;font-size:.8rem;font-weight:600;color:${k<=2?'var(--accent)':k>=4?'var(--teal)':'var(--amber)'};">${k}/5</td><td style="text-align:center;padding:.28rem .5rem;border-bottom:1px solid #f5f3f0;font-size:.8rem;font-weight:600;color:${c<=2?'var(--accent)':c>=4?'var(--teal)':'var(--amber)'};">${c}/5</td></tr>`).join('');
+  <section>
+    <h2>Experience & Accomplishments</h2>
+    <ul>
+      <li><strong>UGC NET 2025 Qualified:</strong> Cleared the National Eligibility Test for Assistant Professorship, demonstrating high aptitude and structured thinking.</li>
+      <li><strong>Freelance Data & Pricing Analyst (FlixBus India via Internshala):</strong> Worked in a 4-member team to analyze pricing data across 26,000+ routes using SQL to find anomalies. Built a severity framework to group issues and presented weekly findings to the FlixBus Pricing PM.</li>
+      <li><strong>SQL Teaching Assistant (Osmania University):</strong> Led weekly sessions for 60+ students, breaking down complex database logic into simple, actionable steps.</li>
+      <li><strong>Event Coordinator (Computer Society of India):</strong> Organized technical events across multiple colleges, managing logistics, schedules, and stakeholder communication.</li>
+    </ul>
+  </section>
 
-// Zerodha journey comparison chart
-new Chart(document.getElementById('zeroJourney'),{type:'bar',data:{
-  labels:['Zerodha (current)','Angel One (benchmark)'],
-  datasets:[{label:'Screens',data:[14,7],backgroundColor:[accent,teal],borderRadius:4}]
-},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.parsed.y} screens`}}},scales:{y:{beginAtZero:true,max:18,grid:{color:'#f0ede8'},ticks:{stepSize:2}},x:{grid:{display:false}}}}});
+  <section>
+    <h2>Skills & Certifications</h2>
+    <div class="skills">
+      <span>Python (Pandas, Streamlit)</span>
+      <span>SQL (MySQL, PostgreSQL)</span>
+      <span>Advanced Excel</span>
+      <span>HuggingFace Models</span>
+      <span>User Research</span>
+      <span>Writing PRDs</span>
+      <span>RICE / MoSCoW</span>
+      <span>Power BI</span>
+    </div>
+    <ul>
+      <li>Google Project Management Professional Certificate</li>
+      <li>Google Data Analytics Professional Certificate</li>
+      <li>McKinsey Forward Program (Completed June 2026)</li>
+      <li>Accenture Technology Consulting Virtual Experience (Forage)</li>
+      <li>HackerRank SQL Gold Badge</li>
+    </ul>
+  </section>
 
-// MF Funnel
-new Chart(document.getElementById('mfFunnel'),{type:'bar',data:{
-  labels:['All AMFI funds','Large-cap filtered','With 5Y CAGR','Downside protected'],
-  datasets:[{data:[14221,342,186,20],backgroundColor:[navy,'#1e4d96','#2d6abf',teal],borderRadius:4}]
-},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.parsed.x.toLocaleString()} funds`}}},scales:{x:{grid:{color:'#f0ede8'},ticks:{callback:v=>v>=1000?v/1000+'K':v}},y:{grid:{display:false},ticks:{font:{size:10}}}}}});
+  <footer>
+    <p>Built with HTML & CSS. Open to opportunities in Bangalore, Mumbai, and Hyderabad.</p>
+  </footer>
 
-// MF Gap Table
-const rows=[['Sharpe Ratio','✗','✗'],['Volatility / Drawdown','✗','✗'],['Risk visualisation','✗','✓'],['Sector allocation','✗','✓'],['Fund manager info','✗','✓'],['Investor persona fit','✗','✗'],['Benchmark comparison','✗','✗'],['Expense ratio','✓','✓']];
-document.getElementById('mfTable').innerHTML=rows.map(([f,z,a])=>`<tr><td style="padding:.32rem .5rem;color:var(--ink);border-bottom:1px solid #f5f3f0;font-size:.77rem;">${f}</td><td style="text-align:center;padding:.32rem .5rem;border-bottom:1px solid #f5f3f0;color:${z==='✓'?'var(--teal)':'#d1d5db'};font-size:1rem;">${z}</td><td style="text-align:center;padding:.32rem .5rem;border-bottom:1px solid #f5f3f0;color:${a==='✓'?'var(--teal)':'#d1d5db'};font-size:1rem;">${a}</td></tr>`).join('');
-
-// Zomato
-new Chart(document.getElementById('zomato'),{type:'bar',data:{
-  labels:['Delivery\nbehaviour','No support\nresponse','Wrong\norder','Refund\nissue','Payment\nissue','App\nissue','Order\ndelay','Other'],
-  datasets:[{data:[29.8,17.8,13.2,11.5,9.4,7.1,6.8,4.4],backgroundColor:[amber,'#b07015','#c4882a','#d89e42','#e8b85c','#f0ca7a','#f5d898','#f8e4b8'],borderRadius:4}]
-},options:{...base({}),plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.parsed.y}% of complaints`}}},scales:{y:{beginAtZero:true,grid:{color:'#f0ede8'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false},ticks:{maxRotation:0,font:{size:9}}}}}});
-
-// FlixBus Flag Donut
-new Chart(document.getElementById('flixFlag'),{type:'doughnut',data:{
-  labels:['Too Low (underpriced)','OK (within ±15%)','Too High (overpriced)'],
-  datasets:[{data:[15163,7016,3991],backgroundColor:[accent,teal,navy],borderWidth:0,hoverOffset:4}]
-},options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},boxWidth:10,padding:8}},tooltip:{callbacks:{label:ctx=>`${ctx.label}: ${ctx.parsed.toLocaleString()}`}}}}});
-
-// FlixBus Actions
-new Chart(document.getElementById('flixAction'),{type:'bar',data:{
-  labels:['Investigate\nDemand','Maintain','Reduce\nPrice','Increase\nPrice','Slight\nReduce'],
-  datasets:[{data:[14402,7827,3893,34,14],backgroundColor:[accent,teal,navy,'#1d9e75','#94a3b8'],borderRadius:4}]
-},options:base({scales:{y:{grid:{color:'#f0ede8'},ticks:{callback:v=>v>=1000?v/1000+'K':v}},x:{grid:{display:false},ticks:{maxRotation:0,font:{size:9}}}}})});
-
-// CRED Pain Index
-new Chart(document.getElementById('credPain'),{type:'bar',data:{
-  labels:['Rewards\ndevaluation','Customer\nsupport','Payment\nissues','App\nperformance','Trust &\nprivacy','Feature\nrequest','UI/UX','Loan\nissues'],
-  datasets:[{data:[1.00,0.56,0.48,0.19,0.06,0.03,0.02,0.00],backgroundColor:[accent,'#e8693a','#e87d55','#e89170','#eab08e','#ecc4ae','#eed8cc','#f0ede8'],borderRadius:4}]
-},options:base({scales:{y:{beginAtZero:true,max:1.15,grid:{color:'#f0ede8'},ticks:{callback:v=>v.toFixed(2)}},x:{grid:{display:false},ticks:{maxRotation:0,font:{size:9}}}}})});
-
-// CRED Avg Rating
-new Chart(document.getElementById('credRating'),{type:'bar',data:{
-  labels:['UI/UX','Payment','Feature','Loan','Rewards','Support','App','Trust'],
-  datasets:[{data:[3.6,3.4,3.2,2.8,2.5,2.0,2.0,1.7],backgroundColor:['#1d9e75','#1d9e75','#1d9e75','#5dcaa5','#e89170',accent,accent,'#c23a14'],borderRadius:4}]
-},options:base({scales:{y:{beginAtZero:true,max:4.5,grid:{color:'#f0ede8'},ticks:{stepSize:1}},x:{grid:{display:false},ticks:{maxRotation:0,font:{size:9}}}}})});
-</script>
 </body>
 </html>
